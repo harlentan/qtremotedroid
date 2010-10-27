@@ -2,7 +2,7 @@
 
 = Introduction =
 
-QtRemoteDroid is aimed at make any mobile which can access to the network to be you mouse to control your PC. That is to say it is  a *RemoteDroid* appication project. Since it is implemented in [*Qt*#http://www.baidu.cn], any embedded device support Qt  is fit for this project   
+QtRemoteDroid is aimed at make any mobile which can access to the network to be you mouse to control your PC. That is to say it is  a *RemoteDroid* appication project. Since it is implemented in *Qt*[http://www.baidu.cn], any embedded device support Qt  is fit for this project   
 
 
 = Details =
