@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\qTestWidget.o
+./release\touchpanel.o
+./release\touchbuttons.o
+./release\UDPClient.o
+./release\moc_mainwindow.o
+./release\moc_qTestWidget.o
+./release\moc_touchpanel.o
+./release\moc_touchbuttons.o
+./release\moc_UDPClient.o
+);

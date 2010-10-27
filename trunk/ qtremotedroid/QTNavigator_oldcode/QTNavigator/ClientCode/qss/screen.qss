@@ -1,0 +1,3 @@
+QLabel#imageLabel {
+border-image: url(:/image/qt.png) 16;
+}
