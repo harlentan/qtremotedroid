@@ -1,0 +1,5 @@
+#summary Wireless mouse
+
+= RemoteDroid =
+
+RemoteDroid is Wireless mouse
