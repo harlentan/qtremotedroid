@@ -7,4 +7,4 @@ QtRemoteDroid is aimed at make any mobile which can access to the network to be 
 
 = Details =
 
-[QtRemoteDroid]
+[QtRemoteDroid] project is consist of the server and the client. The server work on PC, and the client run on you mobile device support Qt, as well as the server and client could connect togather via network(e.g. wifi, lan)
