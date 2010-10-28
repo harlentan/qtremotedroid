@@ -7,13 +7,6 @@ OSCUdpClient::OSCUdpClient(QString &ipAddr, QString *portNum)
     port = portNum->toUInt();
     qUdpSocket = new QUdpSocket;
 
-    //qUdpSocket->connectToHost(QHostAddress("192.168.1.128"), 57110);
-
-    //qUdpSocket->bind(QHostAddress(SERVER_IP),port2);
-   // qUdpSocket->connectToHost("CNCHPC0130", 57110);
-    //qUdpSocket->setPeerAddress(QHostAddress("192.168.1.128"));
-    //qUdpSocket->setPeerPort(57110);
-    //qUdpSocket->write()
 }
 
 void OSCUdpClient::sendMouseMoveOscMsg(QMouseEvent *e)
@@ -58,7 +51,7 @@ void OSCUdpClient::sendOscMsg(WOscMessage *oscMsg)
     int s = 0;
     QByteArray datagram(oscMsg->GetBuffer(), oscMsg->GetBufferLen());
     qDebug() << oscMsg->GetBuffer();
-    s = qUdpSocket->writeDatagram(datagram, QHostAddress("10.16.32.143"), 57110);
+    s = qUdpSocket->writeDatagram(datagram, QHostAddress(*ip), port);
     qDebug() << "s = " << s;
 }
 
