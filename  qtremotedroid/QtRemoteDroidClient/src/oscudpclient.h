@@ -11,6 +11,9 @@
 #include <QTouchEvent>
 #include <QString>
 #include <QDebug>
+#include <QtGlobal>
+#include <qmath.h>
+
 #include "clientCommn.h"
 
 typedef struct SocketAddress
