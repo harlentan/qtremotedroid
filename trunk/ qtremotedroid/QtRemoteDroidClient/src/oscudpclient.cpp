@@ -20,18 +20,27 @@ void OSCUdpClient::sendMouseMoveOscMsg(QMouseEvent *e)
 {
     type = 2;
 
-    //int posX = (float)(e->pos().x());
-    //int posY = (float)(e->pos().y());
+    float x = e->x() - this->xHistory;
+    float y = e->y() - this->yHistory;
 
-    int posX = e->x() - this->xHistory;
-    int posY = e->y() - this->yHistory;
+    float xDir = x == 0 ? 1 : x / qFabs(x);
+    float yDir = y == 0 ? 1 : y / qFabs(y);
+
+    float xPos = (float)(qPow(qFabs(x), 0.2)) * xDir;
+    float yPos = (float)(qPow(qFabs(y), 0.2)) * yDir;
+
+    qDebug() <<"xDir = " << xDir;
+    qDebug() <<"yDir = " << yDir;
+
+    qDebug() << "xPos = " << xPos;
+    qDebug() << "yPos = " << yPos;
 
 
 
     WOscMessage *message = new WOscMessage("/mouse");
     message->Add(type);
-    message->Add(posX);
-    message->Add(posY);
+    message->Add((xPos));
+    message->Add(yPos);
 
 
     if (e->type() == e->TouchBegin)
@@ -49,7 +58,7 @@ void OSCUdpClient::sendOscMsg(WOscMessage *oscMsg)
     int s = 0;
     QByteArray datagram(oscMsg->GetBuffer(), oscMsg->GetBufferLen());
     qDebug() << oscMsg->GetBuffer();
-    //s = qUdpSocket->writeDatagram(datagram, QHostAddress("192.168.1.128"), 57110);
+    s = qUdpSocket->writeDatagram(datagram, QHostAddress("10.16.32.143"), 57110);
     qDebug() << "s = " << s;
 }
 

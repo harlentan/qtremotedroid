@@ -96,7 +96,11 @@ void ClientConfig::ClientConn()
 
     tmpWin = new MainWindow(ipText, portNum);
     tmpWin->show();
+
+#ifndef Q_WS_WIN
     tmpWin->showFullScreen();
+#endif
+
     //we need to test if the server is ok
     //UDPClient udpTest(ipText, portNum);
 
