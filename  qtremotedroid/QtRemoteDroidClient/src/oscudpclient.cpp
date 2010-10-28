@@ -6,6 +6,10 @@ OSCUdpClient::OSCUdpClient(QString &ipAddr, QString *portNum)
     ip = new QString(ipAddr.data(),ipAddr.size());
     port = portNum->toUInt();
     qUdpSocket = new QUdpSocket;
+    this->xHistory = 0;
+    this->yHistory = 0;
+    this->xlast = 0;
+    this->ylast = 0;
 
 }
 
@@ -19,12 +23,16 @@ void OSCUdpClient::sendMouseMoveOscMsg(QMouseEvent *e)
     float xDir = x == 0 ? 1 : x / qFabs(x);
     float yDir = y == 0 ? 1 : y / qFabs(y);
 
-    float xPos = (float)(qPow(qFabs(x), 0.2)) * xDir;
-    float yPos = (float)(qPow(qFabs(y), 0.2)) * yDir;
 
-    qDebug() <<"xDir = " << xDir;
-    qDebug() <<"yDir = " << yDir;
 
+    float xPos = (float)(qFabs(x)*0.4) * xDir;
+    float yPos = (float)(qFabs(y)*0.4) * yDir;
+
+    if(xDir < 0 )
+    qDebug() <<"-----------------------";
+    //qDebug() <<"yDir = " << yDir;
+    if(xDir > 0 )
+        qDebug() << "++++++++++++";
     qDebug() << "xPos = " << xPos;
     qDebug() << "yPos = " << yPos;
 
@@ -41,7 +49,11 @@ void OSCUdpClient::sendMouseMoveOscMsg(QMouseEvent *e)
         qDebug() << "press++++++++++++";
     }
 
+    this->xHistory = e->x();
+    this->yHistory = e->y();
     sendOscMsg(message);
+
+
 }
 
 
@@ -52,13 +64,14 @@ void OSCUdpClient::sendOscMsg(WOscMessage *oscMsg)
     QByteArray datagram(oscMsg->GetBuffer(), oscMsg->GetBufferLen());
     qDebug() << oscMsg->GetBuffer();
     s = qUdpSocket->writeDatagram(datagram, QHostAddress(*ip), port);
+    //s = qUdpSocket->writeDatagram(datagram, QHostAddress("10.16.32.143"), 57110);
     qDebug() << "s = " << s;
 }
 
 void OSCUdpClient::sendLeftButnOscMsg(QMouseEvent *e)
 {
     WOscMessage *message = new WOscMessage("/leftbutton");
-    message->Add(0);
+    message->Add(1);
     sendOscMsg(message);
 }
 
