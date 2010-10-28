@@ -17,6 +17,7 @@ public slots:
 
 private:
     void mousePressEvent(QMouseEvent *e);
+    void mouseReleaseEvent(QMouseEvent *e);
 };
 
 #endif // TOUCHBUTTONS_H

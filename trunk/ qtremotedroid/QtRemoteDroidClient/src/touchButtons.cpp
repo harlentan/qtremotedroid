@@ -31,6 +31,10 @@ void touchButtons::mousePressEvent(QMouseEvent *e)
     */
 }
 
+void touchButtons::mouseReleaseEvent(QMouseEvent *e)
+{
+    emit gestureClick(e);
+}
 /*
 void touchButtons::gestureClick(QMouseEvent *e)
 {

@@ -58,6 +58,8 @@ private:
     int type;
     float xHistory;
     float yHistory;
+    float xlast;
+    float ylast;
 };
 
 #endif // OSCUDPCLIENT_H
