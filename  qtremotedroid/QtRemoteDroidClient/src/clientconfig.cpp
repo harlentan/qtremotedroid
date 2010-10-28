@@ -4,16 +4,6 @@
 ClientConfig::ClientConfig(QWidget *parent)
     : QWidget(parent)
 {
-    //set system font bold
-    //QFont font;
-    //font.setBold(true);
-    //setFont(font);
-
-    //QString ad(tr("10.24.53.14"));
-    //QString po(tr("54"));
-
-
-
     QLabel *pTipText = new QLabel(tr("Please input the server IP address"));
     QPalette textPalet;
     textPalet.setColor(QPalette::WindowText, Qt::white);
@@ -26,8 +16,8 @@ ClientConfig::ClientConfig(QWidget *parent)
     pIpEdit = new QLineEdit;
 
     //set the ip format
-   // QString maskStr("000.000.000.000");
-    //pIpEdit->setInputMask(maskStr);
+    QString maskStr("000.000.000.000");
+    pIpEdit->setInputMask(maskStr);
 
     QPushButton *pConnButn = new QPushButton(tr("Connect"));
     QPushButton *pQuitButn = new QPushButton(tr("Quit"));
@@ -73,8 +63,6 @@ ClientConfig::ClientConfig(QWidget *parent)
     connect(pConnButn, SIGNAL(clicked()), this, SLOT(ClientConn()));
     connect(pSetButn, SIGNAL(clicked()), this, SLOT(OnClickSetButn()));
 
-
-   // SA = new NvClientConn(ad, po);
 }
 
 ClientConfig::~ClientConfig()
@@ -85,11 +73,7 @@ ClientConfig::~ClientConfig()
 void ClientConfig::ClientConn()
 {
     this->hide();
-/*
-    tmpWin = new MainWindow;
-    tmpWin->show();
-*/
-   // QString ipText;
+
     QString ipText = pIpEdit->text();
     QString portNum(SERV_PORT);
 
