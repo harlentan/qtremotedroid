@@ -1,3 +1,0 @@
-#include "mousemethod.h"
-
-MouseMethod::
