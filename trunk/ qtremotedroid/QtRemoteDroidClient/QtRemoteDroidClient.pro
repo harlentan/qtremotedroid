@@ -16,7 +16,6 @@ SOURCES +=\
     src/touchPanel.cpp \
     src/touchButtons.cpp \
     src/start.cpp \
-    src/qTestWidget.cpp \
     src/oscudpclient.cpp \
     src/mainwindow.cpp \
     src/main.cpp \
@@ -46,7 +45,6 @@ HEADERS  += \
     src/touchPanel.h \
     src/touchButtons.h \
     src/start.h \
-    src/qTestWidget.h \
     src/oscudpclient.h \
     src/mainwindow.h \
     src/helper.h \

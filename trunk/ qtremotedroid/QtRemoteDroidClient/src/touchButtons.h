@@ -10,10 +10,11 @@ public:
     explicit touchButtons(QWidget *parent = 0);
 
 signals:
-    void gestureClick(QMouseEvent *e);
-    void clicked();
+    //void gestureClick(QMouseEvent *e);
+    //void clicked();
+    void gesturePress(QMouseEvent *e);
+    void gestureRelease(QMouseEvent *e);
 public slots:
-
 
 private:
     void mousePressEvent(QMouseEvent *e);

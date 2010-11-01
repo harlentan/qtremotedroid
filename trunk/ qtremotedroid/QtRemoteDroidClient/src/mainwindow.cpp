@@ -78,10 +78,14 @@ void MainWindow::setupUi(QMainWindow *MainWindow)
     QObject::connect(touchPad, SIGNAL(gestureRelease(QMouseEvent *)),
                             oscUdp, SLOT(gestureRelease(QMouseEvent*)));
 
-    QObject::connect(leftButton, SIGNAL(gestureClick(QMouseEvent *)),
-                            oscUdp, SLOT(sendLeftButnOscMsg(QMouseEvent*)));
-    QObject::connect(rightButton, SIGNAL(gestureClick(QMouseEvent *)),
-                     oscUdp, SLOT(sendRightButnOscMsg(QMouseEvent*)));
+    QObject::connect(leftButton, SIGNAL(gesturePress(QMouseEvent *)),
+                            oscUdp, SLOT(sendLeftButnPress(QMouseEvent*)));
+    QObject::connect(leftButton, SIGNAL(gesturePress(QMouseEvent *)),
+                     oscUdp, SLOT(sendLeftButnRelease(QMouseEvent*)));
+    QObject::connect(rightButton, SIGNAL(gesturePress(QMouseEvent *)),
+                     oscUdp, SLOT(sendRightButnPress(QMouseEvent*)));
+    QObject::connect(rightButton, SIGNAL(gesturePress(QMouseEvent *)),
+                     oscUdp, SLOT(sendRightButnRelease(QMouseEvent*)));
    // QObject::connect(rightButton, SIGNAL(clicked()), oscUdp, SLOT(sendRightButnOscMsg()));
 }
 
