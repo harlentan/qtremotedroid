@@ -9,6 +9,7 @@ touchButtons::touchButtons(QWidget *parent) :
 
 void touchButtons::mousePressEvent(QMouseEvent *e)
 {
+    /*
     QString objNameL("leftButton");
     QString objNameR("rightButton");
     QString objName = objectName();
@@ -23,17 +24,15 @@ void touchButtons::mousePressEvent(QMouseEvent *e)
         {
             qDebug() << "rightButton";
             emit gestureClick(e);
-        }
+        }*/
 
-    /*
-    qDebug() << "Test Code" << e->pos();
-    emit gestureClick(e);
-    */
+    emit gesturePress(e);
+
 }
 
 void touchButtons::mouseReleaseEvent(QMouseEvent *e)
 {
-    emit gestureClick(e);
+    emit gestureRelease(e);
 }
 /*
 void touchButtons::gestureClick(QMouseEvent *e)

@@ -68,20 +68,37 @@ void OSCUdpClient::sendOscMsg(WOscMessage *oscMsg)
     qDebug() << "s = " << s;
 }
 
-void OSCUdpClient::sendLeftButnOscMsg(QMouseEvent *e)
+void OSCUdpClient::sendRightButnPress(QMouseEvent *e)
 {
+    qDebug() << "send right press";
+    WOscMessage *message = new WOscMessage("/rightbutton");
+    message->Add(0);
+    sendOscMsg(message);
+}
+
+void OSCUdpClient::sendRightButnRelease(QMouseEvent *e)
+{
+    WOscMessage *message = new WOscMessage("/rightbutton");
+    message->Add(1);
+    sendOscMsg(message);
+}
+
+void OSCUdpClient::sendLeftButnPress(QMouseEvent *e)
+{
+    qDebug() <<"left button press";
+    WOscMessage *message = new WOscMessage("/leftbutton");
+    message->Add(0);
+    sendOscMsg(message);
+}
+
+void OSCUdpClient::sendLeftButnRelease(QMouseEvent *e)
+{
+    qDebug() << "left button release";
     WOscMessage *message = new WOscMessage("/leftbutton");
     message->Add(1);
     sendOscMsg(message);
 }
 
-void OSCUdpClient::sendRightButnOscMsg(QMouseEvent *e)
-{
-    qDebug() <<"send osc message";
-    WOscMessage *message = new WOscMessage("/rightbutton");
-    message->Add(0);
-    sendOscMsg(message);
-}
 
 void OSCUdpClient::gesturePress(QMouseEvent *e)
 {
