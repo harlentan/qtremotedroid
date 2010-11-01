@@ -3,6 +3,7 @@
 
 #include "OSC_lgd/WOscReceiverMethod.h"
 #include "netreturnaddress.h"
+#include "oscservermethod.h"
 
 class OscServerMethod : public WOscReceiverMethod
 {
@@ -11,10 +12,11 @@ public:
                     WOscReceiver* receiverContext,
                     const char* methodName,
                     const char* methodDescription);
-    virtual void Method(
+    /*virtual void Method(
             const WOscMessage *message,
             const WOscTimeTag& when,
             const NetReturnAddress* networkReturnAddress) = 0;
+*/
 private:
     //OscServerMethod();
 };
