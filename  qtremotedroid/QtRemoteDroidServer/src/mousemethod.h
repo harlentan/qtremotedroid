@@ -2,6 +2,7 @@
 #define MOUSEMETHOD_H
 
 #include "oscservermethod.h"
+#include <QDebug>
 
 class MouseMethod : public OscServerMethod
 {
@@ -12,9 +13,9 @@ public:
                 const char* methodDescription);
 
     virtual void Method(
-            const WOscMessage *message,
+            const WOscMessage* message,
             const WOscTimeTag& when,
-            const NetReturnAddress* networkReturnAddress);
+            const WOscNetReturn* networkReturnAddress);
 };
 
 #endif // MOUSEMETHOD_H

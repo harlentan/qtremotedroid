@@ -3,6 +3,9 @@
 
 #include <QtGui/QMainWindow>
 
+#include "oscserver.h"
+#include "remotedroidserver.h"
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -10,6 +13,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+private:
+    RemoteDroidServer *remoteServer;
 };
 
 #endif // MAINWINDOW_H

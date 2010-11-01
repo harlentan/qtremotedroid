@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "qTestWidget.h"
+//#include "qTestWidget.h"
 #include "touchPanel.h"
 #include "touchButtons.h"
 
