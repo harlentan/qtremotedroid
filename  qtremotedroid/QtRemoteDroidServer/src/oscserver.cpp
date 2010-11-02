@@ -8,6 +8,7 @@ void OscServer::HandleNonmatchedMessages(
         const WOscMessage *msg,
         const WOscNetReturn *networkReturnAddress)
 {
+    //std::cout<<"HandleOffendingPackets.\n";
 }
 
 void OscServer::HandleOffendingPackets(
@@ -21,4 +22,9 @@ void OscServer::NetworkSend(
         int dataLen,
         const WOscNetReturn *networkReturnAddress){
 
+}
+
+OscServer::~OscServer(){
+    WOscContainer* as = GetAddressSpace();
+    if ( as ) as->RemoveAll();
 }

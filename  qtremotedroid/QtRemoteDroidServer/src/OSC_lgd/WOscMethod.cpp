@@ -41,8 +41,6 @@
 #include "WOscException.h"
 #include "WOscContainer.h"
 
-#include <QDebug>
-
 /*  -----------------------------------------------------------------------  */
 /* 	WOscMethodInfo                                                           */
 /*  -----------------------------------------------------------------------  */
@@ -432,9 +430,7 @@ void WOscCallbackListItem::InvokeRecursively(const WOscMessage* message,
 											 const WOscTimeTag& when,
 											 const WOscNetReturn* networkReturnAddress)
 {
-        qDebug() << "I am going to send the method";
 	m_theMethod->Method(message, when, networkReturnAddress);
-        qDebug() << "complete";
 	if ( m_next )
 		m_next->InvokeRecursively(message, when, networkReturnAddress);
 }

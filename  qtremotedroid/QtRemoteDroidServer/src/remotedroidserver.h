@@ -1,33 +1,30 @@
 #ifndef REMOTEDROIDSERVER_H
 #define REMOTEDROIDSERVER_H
 
-#include <QObject>
-#include "OSC_lgd/WOscReceiver.h"
-#include "OSC_lgd/WOscReceiverMethod.h"
-#include "OSC_lgd/WOscContainer.h"
-#include "mousemethod.h"
+#include <QWidget>
 #include <QUdpSocket>
 #include "oscserver.h"
-#include "netreturnaddress.h"
+#include "oscservermethod.h"
+#include "mousemethod.h"
+#include "leftbuttonmethod.h"
+#include "rightbuttonmethod.h"
 
-#define WOS_MAX_RX_UDP_PACKET	2048
 
-class RemoteDroidServer : public QObject
+class RemoteDroidServer : public QWidget
 {
     Q_OBJECT
 public:
-    explicit RemoteDroidServer(QObject *parent = 0);
+    explicit RemoteDroidServer(QWidget *parent = 0);
 
 signals:
 
 public slots:
-    void recv();
+    void oscReceive();
+
 
 private:
-
     QUdpSocket *udpSocket;
     OscServer *server;
-
 
 };
 

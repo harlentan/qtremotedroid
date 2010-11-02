@@ -12,11 +12,7 @@ public:
                     WOscReceiver* receiverContext,
                     const char* methodName,
                     const char* methodDescription);
-    /*virtual void Method(
-            const WOscMessage *message,
-            const WOscTimeTag& when,
-            const NetReturnAddress* networkReturnAddress) = 0;
-*/
+
 private:
     //OscServerMethod();
 };

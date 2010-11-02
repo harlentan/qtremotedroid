@@ -25,7 +25,7 @@
  *
  * uli.franke@weiss.ch
  */
-#include <QDebug>
+
 /** WOscReceiver source file.
  * \file
  *
@@ -147,9 +147,9 @@ void WOscReceiver::NetworkReceive(const char* const data, int dataLen, WOscNetRe
 	/* check data length to not read wrong data 
 	 * when guessing OSC-object
 	 */
-        qDebug() << "sonstrust...";
 	if ( dataLen < 1 )
 		return;
+
 	/* guess if bundle or message.
 	 * if bundle, the return address gets managed by the bundle
 	 * and priority-queue (.
@@ -202,14 +202,11 @@ void WOscReceiver::NetworkReceive(const char* const data, int dataLen, WOscNetRe
 
 	}else{
 		/* message -> invoke*/
-            qDebug() << "this is a message";
 		WOscMessage* rxMsg = NULL;
 		try{
 			/* try to construct */
 			rxMsg = new WOscMessage(data, dataLen);
-
-                        qDebug() << data;
-
+		
 		}catch(WOscException* exception){
 
 			/* call user defined exception handler */
@@ -319,26 +316,19 @@ void WOscReceiver::ProcessBundle(WOscBundle* bundle){
  */
 void WOscReceiver::ProcessMessage(WOscMessage* msg, const WOscNetReturn* networkReturnAddress){
 	
-        qDebug() << "pppppppppppppppppppppp";
-        qDebug() << "ths buffer"<<msg->GetBuffer();
-        qDebug() << "the length" << msg->GetBufferLen();
-        WOscTimeTag currentTime = WOscTimeTag::GetCurrentTime(m_systemTime);
+	WOscTimeTag currentTime = WOscTimeTag::GetCurrentTime(m_systemTime);
 
 		if ( m_addrSpaceRootContainer ){
 			/* get matching methods */
 			WOscCallbackList* callBackList = m_addrSpaceRootContainer->DispatchMessage(msg);
 			// check if matching methods found
-                        if ( callBackList->GetNumMethods() <= 0 ){
+			if ( callBackList->GetNumMethods() <= 0 )
 				// if not, handle message in special handler
-                                HandleNonmatchedMessages(msg, networkReturnAddress);
-                                qDebug() << "fail000";
-                            }
-                                else{
+				HandleNonmatchedMessages(msg, networkReturnAddress);
+			else
 				// invoke them
 				callBackList->InvokeAll(msg, currentTime, networkReturnAddress);
-                                qDebug() << "success find the method";
-                            }
-                                /* clean up callback list*/
+			/* clean up callback list*/
 			delete callBackList;
 		}
 		/* message done, clean up message */
