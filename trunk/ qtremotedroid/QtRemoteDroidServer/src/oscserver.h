@@ -8,6 +8,8 @@ class OscServer : public WOscReceiver
 {
 public:
     OscServer();
+    virtual ~OscServer();
+
 virtual void NetworkSend(
         const char* data, int dataLen,
         const WOscNetReturn* networkReturnAddress);

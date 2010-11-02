@@ -7,7 +7,6 @@
 QT       += core gui\
             network
 
-CONFIG += console
 TARGET = QtRemoteDroidServer
 TEMPLATE = app
 
@@ -36,7 +35,9 @@ SOURCES +=\
     src/oscservermethod.cpp \
     src/netreturnaddress.cpp \
     src/mousemethod.cpp \
-    src/remotedroidserver.cpp
+    src/remotedroidserver.cpp \
+    src/leftbuttonmethod.cpp \
+    src/rightbuttonmethod.cpp
 
 HEADERS  += \
     src/mainwindow.h \
@@ -62,4 +63,6 @@ HEADERS  += \
     src/oscservermethod.h \
     src/netreturnaddress.h \
     src/mousemethod.h \
-    src/remotedroidserver.h
+    src/remotedroidserver.h \
+    src/leftbuttonmethod.h \
+    src/rightbuttonmethod.h

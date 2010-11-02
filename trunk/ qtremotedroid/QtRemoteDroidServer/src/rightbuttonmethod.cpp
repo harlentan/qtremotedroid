@@ -1,11 +1,11 @@
-#include "leftbuttonmethod.h"
+#include "rightbuttonmethod.h"
+#include <QApplication>
 #include <QMouseEvent>
-#include <QCursor>
-#include <QtGui/QApplication>
-#include <QtGlobal>
+#include <QEvent>
+
 #include <windows.h>
 
-LeftButtonMethod::LeftButtonMethod(
+RightButtonMethod::RightButtonMethod(
         WOscContainer *parent,
         WOscReceiver *receiverContext,
         const char *methodName,
@@ -18,18 +18,19 @@ LeftButtonMethod::LeftButtonMethod(
 {
 }
 
-void LeftButtonMethod::Method(
+void RightButtonMethod::Method(
         const WOscMessage *message,
         const WOscTimeTag &when,
         const WOscNetReturn *networkReturnAddress){
-    qDebug() << "the left button has received the message";
+    qDebug() << "the right button has received the message";
     int type = message->GetInt(0);
     switch(type)
     {
-    case 0:
-        mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+    case 0 :
+        mouse_event(MOUSEEVENTF_RIGHTDOWN, 0, 0, 0, 0);
+        break;
     case 1:
-        mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+        mouse_event(MOUSEEVENTF_RIGHTUP, 0, 0, 0, 0);
+        break;
     }
-
 }

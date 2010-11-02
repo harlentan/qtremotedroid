@@ -1,29 +1,31 @@
 #include "remotedroidserver.h"
 
-RemoteDroidServer::RemoteDroidServer(QObject *parent) :
-    QObject(parent)
+RemoteDroidServer::RemoteDroidServer(QWidget *parent) :
+    QWidget(parent)
 {
-    bool isBind;
     server = new OscServer;
+    udpSocket = new QUdpSocket;
     WOscContainerInfo rootInfo("root");
     WOscContainer *rootContainer = new WOscContainer(&rootInfo);
 
-    MouseMethod(rootContainer, server, "mouse", "mouse message");
+    //construct the receive method
+    new MouseMethod(rootContainer, server, "mouse", "receive the mouse message");
+    new LeftButtonMethod(rootContainer, server, "leftbutton", "receive the leftbutton message");
+    new RightButtonMethod(rootContainer, server, "rightbutton", "receive the rightbutton message");
+
     server->SetAddressSpace(rootContainer);
+    qDebug() << "the receive address space:";
     qDebug() << server->GetAddressSpace()->GetAddressSpace().GetBuffer();
 
-    udpSocket = new QUdpSocket;
-    isBind = udpSocket->bind(QHostAddress::Any, 57110);
-    qDebug() << "bind = " << isBind;
 
-    connect(udpSocket, SIGNAL(readyRead()), this, SLOT(recv()));
+    udpSocket->bind(QHostAddress::Any, 57110);
+    connect(udpSocket, SIGNAL(readyRead()), this, SLOT(oscReceive()));
+
+
 }
 
-void RemoteDroidServer::recv()
-{
+void RemoteDroidServer::oscReceive(){
     QByteArray datagram;
-    QDataStream in(&datagram, QIODevice::ReadOnly);
-    //QPoint mousePos ;
     NetReturnAddress net;
     qDebug() <<"coming";
     do {
@@ -34,11 +36,5 @@ void RemoteDroidServer::recv()
 
     qDebug() << "the message is" << datagram;
     qDebug() << "the length is " << datagram.length();
-    qDebug() << "send.....";
     server->NetworkReceive(datagram.data(), datagram.length(), &net);
-    //in.setVersion(QDataStream::Qt_4_3);
-    //in >> mousePos ;
-    //qDebug() << "UDPClient::recv_slot" << mousePos;
-    //QCursor::setPos(mousePos.x(), mousePos.y());
-    //emit gmouseMove(&mousePos);
 }
