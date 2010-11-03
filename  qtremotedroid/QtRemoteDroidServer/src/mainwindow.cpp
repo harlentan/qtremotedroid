@@ -65,9 +65,9 @@ void MainWindow::setSystemTra(){
     QString ipStr = localAddress.toString();
 
     trayIcon->setIcon(icon);
-    trayIcon->setToolTip("RemoteDroidServer");
-    QString titlec = tr("RemoteDroid");
-    QString preStr = QString("please in put ip:");
+    trayIcon->setToolTip("QtRemoteDroidServer");
+    QString titlec = tr("QtRemoteDroid");
+    QString preStr = QString("Please Input The IP:");
     preStr.append(ipStr);
     trayIcon->show();
     trayIcon->showMessage(titlec, preStr, QSystemTrayIcon::Information, 200000);
@@ -75,9 +75,8 @@ void MainWindow::setSystemTra(){
 
     exitAction = new QAction("Exit", this);
     configAction = new QAction("Setting", this);
-    aboutAction = new QAction("About...", this);
+    aboutAction = new QAction("About QtRemoteDroid", this);
 
-    connect(exitAction, SIGNAL(triggered()), this, SLOT(close()));
 
     trayMenu = new QMenu;
     trayMenu->addAction(configAction);
@@ -87,11 +86,19 @@ void MainWindow::setSystemTra(){
     trayMenu->addAction(exitAction);
 
 
+    connect(exitAction, SIGNAL(triggered()), this, SLOT(close()));
+    connect(aboutAction, SIGNAL(triggered()), this, SLOT(aboutPanel()));
+    connect(configAction, SIGNAL(triggered()), this, SLOT(settingPanel()));
+
     trayIcon->setContextMenu(trayMenu);
+}
 
+void MainWindow::aboutPanel(){
+    about  = new AboutPanel;
+    about->show();
+}
 
-
-
-
-
+void MainWindow::settingPanel(){
+    set = new SettingPanel;
+    set->show();
 }

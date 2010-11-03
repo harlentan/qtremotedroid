@@ -12,6 +12,8 @@
 #include "mousemethod.h"
 #include "remotedroidserver.h"
 #include <QUdpSocket>
+#include "aboutpanel.h"
+#include "settingpanel.h"
 
 class MainWindow : public QMainWindow
 {
@@ -25,7 +27,8 @@ public:
     void setSystemTra();
 
 public slots:
-    //void oscReceivce();
+    void aboutPanel();
+    void settingPanel();
 
 private:
     RemoteDroidServer *remoteServer;
@@ -34,6 +37,9 @@ private:
     QAction *aboutAction;
     QAction *configAction;
     QMenu *trayMenu;
+    AboutPanel *about;
+    SettingPanel *set;
+
    // OscServer *server;
    // QUdpSocket *udpSocket;
 

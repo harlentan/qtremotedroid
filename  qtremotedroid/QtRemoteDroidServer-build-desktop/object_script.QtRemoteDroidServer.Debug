@@ -25,6 +25,10 @@ INPUT(
 ./debug\remotedroidserver.o
 ./debug\leftbuttonmethod.o
 ./debug\rightbuttonmethod.o
+./debug\menuwidget.o
+./debug\settingpanel.o
+./debug\aboutpanel.o
 ./debug\moc_mainwindow.o
 ./debug\moc_remotedroidserver.o
+./debug\moc_menuwidget.o
 );
