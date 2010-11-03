@@ -25,6 +25,10 @@ INPUT(
 ./release\remotedroidserver.o
 ./release\leftbuttonmethod.o
 ./release\rightbuttonmethod.o
+./release\menuwidget.o
+./release\settingpanel.o
+./release\aboutpanel.o
 ./release\moc_mainwindow.o
 ./release\moc_remotedroidserver.o
+./release\moc_menuwidget.o
 );

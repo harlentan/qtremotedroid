@@ -37,7 +37,10 @@ SOURCES +=\
     src/mousemethod.cpp \
     src/remotedroidserver.cpp \
     src/leftbuttonmethod.cpp \
-    src/rightbuttonmethod.cpp
+    src/rightbuttonmethod.cpp \
+    src/menuwidget.cpp \
+    src/settingpanel.cpp \
+    src/aboutpanel.cpp
 
 HEADERS  += \
     src/mainwindow.h \
@@ -65,4 +68,7 @@ HEADERS  += \
     src/mousemethod.h \
     src/remotedroidserver.h \
     src/leftbuttonmethod.h \
-    src/rightbuttonmethod.h
+    src/rightbuttonmethod.h \
+    src/menuwidget.h \
+    src/settingpanel.h \
+    src/aboutpanel.h
