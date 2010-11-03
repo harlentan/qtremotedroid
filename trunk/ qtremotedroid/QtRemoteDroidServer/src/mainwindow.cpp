@@ -95,6 +95,7 @@ void MainWindow::setSystemTra(){
 
 void MainWindow::aboutPanel(){
     about  = new AboutPanel;
+    //about->move();
     about->show();
 }
 

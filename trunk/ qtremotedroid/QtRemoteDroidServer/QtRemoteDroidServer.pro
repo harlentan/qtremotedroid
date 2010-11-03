@@ -71,4 +71,5 @@ HEADERS  += \
     src/rightbuttonmethod.h \
     src/menuwidget.h \
     src/settingpanel.h \
-    src/aboutpanel.h
+    src/aboutpanel.h \
+    src/config.h
