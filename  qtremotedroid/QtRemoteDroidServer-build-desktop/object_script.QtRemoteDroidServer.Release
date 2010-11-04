@@ -28,7 +28,9 @@ INPUT(
 ./release\menuwidget.o
 ./release\settingpanel.o
 ./release\aboutpanel.o
+./release\mainwidget.o
 ./release\moc_mainwindow.o
 ./release\moc_remotedroidserver.o
 ./release\moc_menuwidget.o
+./release\moc_mainwidget.o
 );

@@ -2,6 +2,7 @@
 #define SETTINGPANEL_H
 
 #include "menuwidget.h"
+#include <QIcon>
 
 class SettingPanel : public MenuWidget
 {

@@ -40,7 +40,8 @@ SOURCES +=\
     src/rightbuttonmethod.cpp \
     src/menuwidget.cpp \
     src/settingpanel.cpp \
-    src/aboutpanel.cpp
+    src/aboutpanel.cpp \
+    src/mainwidget.cpp
 
 HEADERS  += \
     src/mainwindow.h \
@@ -72,4 +73,5 @@ HEADERS  += \
     src/menuwidget.h \
     src/settingpanel.h \
     src/aboutpanel.h \
-    src/config.h
+    src/config.h \
+    src/mainwidget.h

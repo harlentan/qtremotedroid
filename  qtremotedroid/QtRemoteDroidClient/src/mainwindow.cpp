@@ -31,7 +31,7 @@ void MainWindow::setupUi(QMainWindow *MainWindow)
     touchPad = new touchPanel(centralWidget);
     touchPad->setObjectName(QString::fromUtf8("widget"));
     //touchPad->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 255);"));
-    palette.setColor(QPalette::Background, Qt::red);
+    palette.setColor(QPalette::Background, QColor(Qt::gray));
     touchPad->setPalette(palette);
     touchPad->setAutoFillBackground(TRUE);
 
@@ -45,7 +45,7 @@ void MainWindow::setupUi(QMainWindow *MainWindow)
     leftButton = new touchButtons(centralWidget);
     leftButton->setObjectName(QString::fromUtf8("leftButton"));
     //leftButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 255);"));
-    palette.setColor(QPalette::Background, Qt::red);
+    palette.setColor(QPalette::Background, QColor(209, 238, 238));
     leftButton->setPalette(palette);
     leftButton->setAutoFillBackground(TRUE);
 
@@ -54,7 +54,7 @@ void MainWindow::setupUi(QMainWindow *MainWindow)
     rightButton = new touchButtons(centralWidget);
     rightButton->setObjectName(QString::fromUtf8("rightButton"));
     //rightButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 255);"));
-    palette.setColor(QPalette::Background, Qt::red);
+    palette.setColor(QPalette::Background, QColor(209, 238, 238));
     rightButton->setPalette(palette);
     rightButton->setAutoFillBackground(TRUE);
 

@@ -28,7 +28,9 @@ INPUT(
 ./debug\menuwidget.o
 ./debug\settingpanel.o
 ./debug\aboutpanel.o
+./debug\mainwidget.o
 ./debug\moc_mainwindow.o
 ./debug\moc_remotedroidserver.o
 ./debug\moc_menuwidget.o
+./debug\moc_mainwidget.o
 );
