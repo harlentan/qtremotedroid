@@ -14,6 +14,7 @@
 #include <QUdpSocket>
 #include "aboutpanel.h"
 #include "settingpanel.h"
+#include "mainwidget.h"
 
 class MainWindow : public QMainWindow
 {
@@ -29,6 +30,7 @@ public:
 public slots:
     void aboutPanel();
     void settingPanel();
+    void showMain();
 
 private:
     RemoteDroidServer *remoteServer;
@@ -36,9 +38,12 @@ private:
     QAction *exitAction;
     QAction *aboutAction;
     QAction *configAction;
+    QAction *mainAction;
     QMenu *trayMenu;
     AboutPanel *about;
     SettingPanel *set;
+    MainWidget *mainWget;
+
 
    // OscServer *server;
    // QUdpSocket *udpSocket;

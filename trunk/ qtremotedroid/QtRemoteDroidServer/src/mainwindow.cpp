@@ -76,19 +76,33 @@ void MainWindow::setSystemTra(){
     exitAction = new QAction("Exit", this);
     configAction = new QAction("Setting", this);
     aboutAction = new QAction("About QtRemoteDroid", this);
+    mainAction = new QAction("Show main Window", this);
 
+    //add icon to the menu
+    icon = QIcon(QPixmap("./img/aboutusicon.png"));
+    aboutAction->setIcon(icon);
+    icon = QIcon(QPixmap("./img/setting.png"));
+    configAction->setIcon(icon);
+    icon = QIcon(QPixmap("./img/exit.png"));
+    exitAction->setIcon(icon);
+    icon = QIcon(QPixmap("./img/app.png"));
+    mainAction->setIcon(icon);
 
     trayMenu = new QMenu;
+    trayMenu->addAction(mainAction);
+    trayMenu->addSeparator();
     trayMenu->addAction(configAction);
     trayMenu->addSeparator();
     trayMenu->addAction(aboutAction);
+
     trayMenu->addSeparator();
     trayMenu->addAction(exitAction);
 
 
     connect(exitAction, SIGNAL(triggered()), this, SLOT(close()));
     connect(aboutAction, SIGNAL(triggered()), this, SLOT(aboutPanel()));
-    connect(configAction, SIGNAL(triggered()), this, SLOT(settingPanel()));
+    //connect(configAction, SIGNAL(triggered()), this, SLOT(settingPanel()));
+    connect(mainAction, SIGNAL(triggered()), this, SLOT(showMain()));
 
     trayIcon->setContextMenu(trayMenu);
 }
@@ -102,4 +116,9 @@ void MainWindow::aboutPanel(){
 void MainWindow::settingPanel(){
     set = new SettingPanel;
     set->show();
+}
+
+void MainWindow::showMain(){
+    mainWget = new MainWidget;
+    mainWget->show();
 }
