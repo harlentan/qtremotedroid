@@ -1,0 +1,16 @@
+Archer Xiong?? [17:53]:
+  对了，我刚刚说错了
+  是在pkg里面指定资源上传的位置哈
+  
+;Files to install
+;You should change the source paths to match that of your environment
+;<source> <destination>
+"$(EPOCROOT)Epoc32\release\$(PLATFORM)\$(TARGET)\MyRs_0xEB47D89C.exe"		-"!:\sys\bin\MyRs_0xEB47D89C.exe"
+"$(EPOCROOT)Epoc32\data\z\resource\apps\MyRs_0xEB47D89C.rsc"		-"!:\resource\apps\MyRs_0xEB47D89C.rsc"
+"$(EPOCROOT)Epoc32\data\z\private\10003a3f\apps\MyRs_0xEB47D89C_reg.rsc"	-"!:\private\10003a3f\import\apps\MyRs_0xEB47D89C_reg.rsc"
+"$(EPOCROOT)Epoc32\data\z\resource\apps\MyRs_0xEB47D89C.mif" -"!:\resource\apps\MyRs_0xEB47D89C.mif"
+"$(EPOCROOT)Epoc32\data\z\resource\apps\background.mbm" -"!:\resource\apps\background.mbm"
+"..\help\MyRs_0xEB47D89C.hlp"							 -"!:\resource\help\MyRs_0xEB47D89C.hlp"
+"$(EPOCROOT)epoc32\data\z\resource\apps\bgmusic.mid" -"!:\resource\apps\bgmusic.mid"
+
+  像这种格式
