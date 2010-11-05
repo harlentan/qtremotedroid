@@ -44,10 +44,10 @@ signals:
 
 public slots:
     void sendMouseMoveOscMsg(QMouseEvent *e);
-    void sendLeftButnPress(QMouseEvent *e);
-    void sendLeftButnRelease(QMouseEvent *e);
-    void sendRightButnRelease(QMouseEvent *e);
-    void sendRightButnPress(QMouseEvent *e);
+    void sendLeftButnPress();
+    void sendLeftButnRelease();
+    void sendRightButnRelease();
+    void sendRightButnPress();
     void sendOscMsg(WOscMessage *oscMsg);
     void gesturePress(QMouseEvent *e);
     void gestureRelease(QMouseEvent *e);

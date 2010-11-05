@@ -3,6 +3,7 @@
 #include "touchPanel.h"
 #include "touchButtons.h"
 
+
 MainWindow::MainWindow(QString &ipAddr, QString &portNum, QWidget *parent) :
     QMainWindow(parent)
 {
@@ -16,6 +17,14 @@ MainWindow::MainWindow(QString &ipAddr, QString &portNum, QWidget *parent) :
 void MainWindow::setupUi(QMainWindow *MainWindow)
 {
     QPalette palette;
+
+
+
+    leftButn = new QPushButton;
+    leftButn->setFixedHeight(qApp->desktop()->rect().height()/4);
+    rightButn = new QPushButton;
+    rightButn->setFixedHeight(qApp->desktop()->rect().height()/4);
+
 
     if (MainWindow->objectName().isEmpty())
         MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
@@ -35,6 +44,24 @@ void MainWindow::setupUi(QMainWindow *MainWindow)
     touchPad->setPalette(palette);
     touchPad->setAutoFillBackground(TRUE);
 
+    //add the set button on the touchPad;
+    setButn = new QPushButton(touchPad);
+    //setButn->setGeometry(qApp->desktop()->rect().width()/2 - 30,
+             //            2,
+               //          60,
+                 //        60);
+    //setButn->clearMask();
+    //setButn->setMask(QBitmap(QPixmap(":/img/set.png")));
+    //QImage image;
+    //image.load(":/img/set.png");
+    //QPixmap pixShow = QPixmap::fromImage(
+      //      image.scaled(image.size(),
+        //    Qt::KeepAspectRatio));
+    QPixmap pix(":/img/set.png");
+    //setButn->setIcon(QIcon(pixShow));
+    setButn->setMask(pix.createHeuristicMask());
+
+
 
     verticalLayout->addWidget(touchPad);
 
@@ -42,23 +69,32 @@ void MainWindow::setupUi(QMainWindow *MainWindow)
     horizontalLayout->setSpacing(6);
     horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
 
-    leftButton = new touchButtons(centralWidget);
-    leftButton->setObjectName(QString::fromUtf8("leftButton"));
+    //leftButton = new touchButtons(centralWidget);
+    //leftButton->setObjectName(QString::fromUtf8("leftButton"));
+
+
     //leftButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 255);"));
-    palette.setColor(QPalette::Background, QColor(209, 238, 238));
-    leftButton->setPalette(palette);
-    leftButton->setAutoFillBackground(TRUE);
 
-    horizontalLayout->addWidget(leftButton);
 
-    rightButton = new touchButtons(centralWidget);
-    rightButton->setObjectName(QString::fromUtf8("rightButton"));
+    //palette.setColor(QPalette::Background, QColor(209, 238, 238));
+    //leftButton->setPalette(palette);
+    //leftButton->setAutoFillBackground(TRUE);
+
+    horizontalLayout->addWidget(leftButn);
+
+    //rightButton = new touchButtons(centralWidget);
+    //rightButton->setObjectName(QString::fromUtf8("rightButton"));
+
+
     //rightButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 255);"));
-    palette.setColor(QPalette::Background, QColor(209, 238, 238));
-    rightButton->setPalette(palette);
-    rightButton->setAutoFillBackground(TRUE);
 
-    horizontalLayout->addWidget(rightButton);
+
+
+    //palette.setColor(QPalette::Background, QColor(209, 238, 238));
+    //rightButton->setPalette(palette);
+    //rightButton->setAutoFillBackground(TRUE);
+
+    horizontalLayout->addWidget(rightButn);
 
 
     verticalLayout->addLayout(horizontalLayout);
@@ -78,14 +114,14 @@ void MainWindow::setupUi(QMainWindow *MainWindow)
     QObject::connect(touchPad, SIGNAL(gestureRelease(QMouseEvent *)),
                             oscUdp, SLOT(gestureRelease(QMouseEvent*)));
 
-    QObject::connect(leftButton, SIGNAL(gesturePress(QMouseEvent *)),
-                            oscUdp, SLOT(sendLeftButnPress(QMouseEvent*)));
-    QObject::connect(leftButton, SIGNAL(gesturePress(QMouseEvent *)),
-                     oscUdp, SLOT(sendLeftButnRelease(QMouseEvent*)));
-    QObject::connect(rightButton, SIGNAL(gesturePress(QMouseEvent *)),
-                     oscUdp, SLOT(sendRightButnPress(QMouseEvent*)));
-    QObject::connect(rightButton, SIGNAL(gesturePress(QMouseEvent *)),
-                     oscUdp, SLOT(sendRightButnRelease(QMouseEvent*)));
+    QObject::connect(leftButn, SIGNAL(pressed()),
+                          oscUdp, SLOT(sendLeftButnPress()));
+    QObject::connect(leftButn, SIGNAL(released()),
+                    oscUdp, SLOT(sendLeftButnRelease()));
+    QObject::connect(rightButn, SIGNAL(pressed()),
+                     oscUdp, SLOT(sendRightButnPress()));
+    QObject::connect(rightButn, SIGNAL(released()),
+                     oscUdp, SLOT(sendRightButnRelease()));
    // QObject::connect(rightButton, SIGNAL(clicked()), oscUdp, SLOT(sendRightButnOscMsg()));
 }
 
