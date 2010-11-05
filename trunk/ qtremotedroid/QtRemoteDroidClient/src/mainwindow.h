@@ -8,6 +8,12 @@
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QPushButton>
+#include <QApplication>
+#include <QDesktopWidget>
+#include <QPushButton>
+#include <QBitmap>
+#include <QImage>
+
 
 //#include "UDPClient.h"
 
@@ -22,6 +28,7 @@ public:
     void setupUi(QMainWindow *MainWindow);
     void retranslateUi(QMainWindow *MainWindow);
 
+
 protected:
     void changeEvent(QEvent *e);
 
@@ -30,12 +37,16 @@ private:
     QVBoxLayout *verticalLayout;
     QWidget *touchPad;
     QHBoxLayout *horizontalLayout;
-    QWidget *leftButton;
-    QWidget *rightButton;
+    //QWidget *leftButton;
+    //QWidget *rightButton;
     QString ip;
     QString port;
     //UDPClient *udpClientObj;
     OSCUdpClient *oscUdp;
+    QPushButton *leftButn;
+    QPushButton *rightButn;
+    QPushButton *setButn;
+
 };
 
 #endif // MAINWINDOW_H
