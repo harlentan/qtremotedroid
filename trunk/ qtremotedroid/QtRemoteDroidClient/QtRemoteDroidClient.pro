@@ -11,6 +11,8 @@ TARGET = QtRemoteDroidClient
 TEMPLATE = app
 
 
+ICON = icon.svg
+
 SOURCES +=\
     src/widget.cpp \
     src/touchPanel.cpp \
@@ -37,7 +39,9 @@ SOURCES +=\
     src/OSC_lgd/WOscException.cpp \
     src/OSC_lgd/WOscContainer.cpp \
     src/OSC_lgd/WOscBundle.cpp \
-    src/OSC_lgd/WOscBlob.cpp
+    src/OSC_lgd/WOscBlob.cpp \
+    src/setting.cpp \
+    src/aboutpanel.cpp
 
 HEADERS  += \
     src/widget.h \
@@ -67,7 +71,9 @@ HEADERS  += \
     src/OSC_lgd/WOscContainer.h \
     src/OSC_lgd/WOscBundle.h \
     src/OSC_lgd/WOscBlob.h \
-    src/OSC_lgd/config.h
+    src/OSC_lgd/config.h \
+    src/setting.h \
+    src/aboutpanel.h
 
 CONFIG += mobility
 MOBILITY = 

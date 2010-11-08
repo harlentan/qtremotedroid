@@ -39,6 +39,7 @@ public:
     void packOscMsg(QString *methodName);
     void addMsgParam(int intArg);
     void addMsgParam(float fArg);
+    void setSens(int type);
 
 signals:
 
@@ -62,6 +63,9 @@ private:
     float yHistory;
     float xlast;
     float ylast;
+    float sensity;
 };
+
+
 
 #endif // OSCUDPCLIENT_H

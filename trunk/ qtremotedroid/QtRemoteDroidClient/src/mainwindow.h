@@ -13,24 +13,37 @@
 #include <QPushButton>
 #include <QBitmap>
 #include <QImage>
+#include <QColor>
 
-
-//#include "UDPClient.h"
 
 #include "oscudpclient.h"
+#include "setting.h"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
 public:
     MainWindow(QWidget *parent = 0);
-    MainWindow(QString &ip, QString &portNum, QWidget *parent = 0);
+    //MainWindow(QString &ip, QString &portNum, QWidget *parent = 0);
     ~MainWindow();
     void setupUi(QMainWindow *MainWindow);
     void retranslateUi(QMainWindow *MainWindow);
+    void initNet(QString &tmpIp, QString &tmpPort);
+    void initPanel();
+    void initSens();
 
+signals:
+    void goPrevious();
+
+public slots:
+    void setBritIcon();
+    void setDimIcon();
+    void onPrevious();
+    void onSetting();
+    void onSubmit();
 
 protected:
     void changeEvent(QEvent *e);
+
 
 private:
     QWidget *centralWidget;
@@ -46,6 +59,7 @@ private:
     QPushButton *leftButn;
     QPushButton *rightButn;
     QPushButton *setButn;
+    Setting *setPanel;
 
 };
 

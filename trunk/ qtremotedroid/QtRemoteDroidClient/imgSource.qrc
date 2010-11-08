@@ -1,5 +1,15 @@
 <RCC>
     <qresource prefix="/">
         <file>img/set.png</file>
+        <file>img/setdim.png</file>
+        <file>img/exitdim.png</file>
+        <file>img/exit.png</file>
+        <file>img/ip.png</file>
+        <file>img/pc.png</file>
+        <file>img/submit.png</file>
+        <file>img/submitdim.png</file>
+        <file>img/previousdim.png</file>
+        <file>img/previous.png</file>
+        <file>img/icon.png</file>
     </qresource>
 </RCC>

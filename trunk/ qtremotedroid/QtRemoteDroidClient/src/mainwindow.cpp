@@ -2,13 +2,15 @@
 //#include "qTestWidget.h"
 #include "touchPanel.h"
 #include "touchButtons.h"
+#include "setting.h"
+#include "clientCommn.h"
 
 
-MainWindow::MainWindow(QString &ipAddr, QString &portNum, QWidget *parent) :
+MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
-    ip = ipAddr;
-    port = portNum;
+    //ip = ipAddr;
+    //port = portNum;
     setupUi(this);
     retranslateUi(this);
     setAttribute(Qt::WA_AcceptTouchEvents);
@@ -18,6 +20,8 @@ void MainWindow::setupUi(QMainWindow *MainWindow)
 {
     QPalette palette;
 
+
+    setPanel = new Setting;
 
 
     leftButn = new QPushButton;
@@ -44,22 +48,21 @@ void MainWindow::setupUi(QMainWindow *MainWindow)
     touchPad->setPalette(palette);
     touchPad->setAutoFillBackground(TRUE);
 
+    QPixmap pix(":/img/set.png");
     //add the set button on the touchPad;
     setButn = new QPushButton(touchPad);
-    //setButn->setGeometry(qApp->desktop()->rect().width()/2 - 30,
-             //            2,
-               //          60,
-                 //        60);
-    //setButn->clearMask();
-    //setButn->setMask(QBitmap(QPixmap(":/img/set.png")));
-    //QImage image;
-    //image.load(":/img/set.png");
-    //QPixmap pixShow = QPixmap::fromImage(
-      //      image.scaled(image.size(),
-        //    Qt::KeepAspectRatio));
-    QPixmap pix(":/img/set.png");
-    //setButn->setIcon(QIcon(pixShow));
-    setButn->setMask(pix.createHeuristicMask());
+    setButn->setFixedSize(pix.width(), pix.height());
+    //QColor color(Qt::yellow);
+    //QPalette pal = setButn->palette();
+    //pal.setColor(QPalette::Button, color);
+    setButn->setIcon(QIcon(pix));
+    setButn->setIconSize(QSize(pix.width(), pix.height()));
+
+
+    setButn->setMask(pix.mask());
+
+    connect(setButn, SIGNAL(pressed()), this, SLOT(setDimIcon()));
+    connect(setButn, SIGNAL(released()), this, SLOT(setBritIcon()));
 
 
 
@@ -122,6 +125,12 @@ void MainWindow::setupUi(QMainWindow *MainWindow)
                      oscUdp, SLOT(sendRightButnPress()));
     QObject::connect(rightButn, SIGNAL(released()),
                      oscUdp, SLOT(sendRightButnRelease()));
+
+
+    QObject::connect(setPanel, SIGNAL(goPrevious()), this, SLOT(onPrevious()));
+    QObject::connect(setButn, SIGNAL(clicked()), this, SLOT(onSetting()));
+    QObject::connect(setPanel, SIGNAL(goSubmit()), this, SLOT(onSubmit()));
+
    // QObject::connect(rightButton, SIGNAL(clicked()), oscUdp, SLOT(sendRightButnOscMsg()));
 }
 
@@ -146,4 +155,73 @@ void MainWindow::changeEvent(QEvent *e)
     default:
         break;
     }
+}
+
+void MainWindow::setDimIcon(){
+    QPixmap pix(":/img/setdim.png");
+    setButn->setIcon(QIcon(pix));
+}
+
+void MainWindow::setBritIcon(){
+    QPixmap pix(":/img/set.png");
+    setButn->setIcon(QIcon(pix));
+}
+
+void MainWindow::onPrevious(){
+    emit goPrevious();
+    setPanel->hide();
+}
+
+void MainWindow::onSetting(){
+
+    this->hide();
+    setPanel->resize(qApp->desktop()->width(), qApp->desktop()->height());
+    setPanel->show();
+    setPanel->showFullScreen();
+
+}
+
+void MainWindow::initNet(QString &tmpIp, QString &tmpPort){
+    ip = tmpIp;
+    port = tmpPort;
+}
+
+void MainWindow::onSubmit(){
+    initPanel();
+    setPanel->hide();
+    this->show();
+    this->showFullScreen();
+
+
+}
+
+void MainWindow::initPanel(){
+    QPalette palette;
+    int padColor = setPanel->getColor();
+
+    qDebug() <<"color is"<<padColor;
+    switch(padColor){
+
+    case GrayColor:
+        palette.setColor(QPalette::Background, GRAY);
+        break;
+    case BlueColor:
+        palette.setColor(QPalette::Background, BLUE);
+        break;
+    case GreenColor:
+        palette.setColor(QPalette::Background, GREEN);
+        break;
+    case RedColor:
+        palette.setColor(QPalette::Background, RED);
+        break;
+    }
+
+    touchPad->setPalette(palette);
+    touchPad->setAutoFillBackground(TRUE);
+
+}
+
+void MainWindow::initSens(){
+    int sensType = setPanel->getSens();
+    oscUdp->setSens(sensType);
 }

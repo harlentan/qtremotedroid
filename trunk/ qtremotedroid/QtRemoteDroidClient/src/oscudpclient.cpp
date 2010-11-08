@@ -25,8 +25,8 @@ void OSCUdpClient::sendMouseMoveOscMsg(QMouseEvent *e)
 
 
 
-    float xPos = (float)(qFabs(x)*0.4) * xDir;
-    float yPos = (float)(qFabs(y)*0.4) * yDir;
+    float xPos = (float)(qFabs(x)*sensity) * xDir;
+    float yPos = (float)(qFabs(y)*sensity) * yDir;
 
     if(xDir < 0 )
     qDebug() <<"-----------------------";
@@ -114,4 +114,20 @@ void OSCUdpClient::gestureRelease(QMouseEvent *e)
     this->yHistory = 0;
 
     qDebug() <<"the history pos is set to 0";
+}
+
+void OSCUdpClient::setSens(int type){
+    int sensType = type;
+
+    switch(sensType){
+    case SENS_HIGH_TYPE:
+        sensity = SENS_HIGH_LEVEL;
+        break;
+    case SENS_MID_TYPE:
+        sensity = SENS_MID_LEVEL;
+        break;
+    case SENS_LOW_TYPE:
+        sensity = SENS_LOW_LEVEL;
+        break;
+    }
 }
