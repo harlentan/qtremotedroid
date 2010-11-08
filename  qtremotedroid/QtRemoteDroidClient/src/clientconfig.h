@@ -29,6 +29,7 @@ class ClientConfig : public QWidget
 public:
     ClientConfig(QWidget *parent = 0);
     ~ClientConfig();
+    void R
 
 
 

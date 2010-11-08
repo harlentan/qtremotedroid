@@ -3,6 +3,7 @@
 
 #include "clientCommn.h"
 #include <QString>
+#include <QtXml/QDomDocument>
 
 #include <QDebug>
 #include <QFile>
