@@ -12,6 +12,7 @@
 #include <QString>
 #include <QApplication>
 #include <QDesktopWidget>
+#include <QDir>
 
 #include "clientCommn.h"
 

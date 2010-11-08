@@ -3,13 +3,18 @@
 
 OSCUdpClient::OSCUdpClient(QString &ipAddr, QString *portNum)
 {
-    ip = new QString(ipAddr.data(),ipAddr.size());
-    port = portNum->toUInt();
+    //ip = new QString(ipAddr.data(),ipAddr.size());
+    //port = portNum->toUInt();
     qUdpSocket = new QUdpSocket;
     this->xHistory = 0;
     this->yHistory = 0;
     this->xlast = 0;
     this->ylast = 0;
+    this->sensity = SENS_MID_LEVEL;
+
+
+    qDebug() << "from the osc  ip:"<<ipAddr;
+    qDebug() << "from the osc port:"<<portNum;
 
 }
 
@@ -130,4 +135,10 @@ void OSCUdpClient::setSens(int type){
         sensity = SENS_LOW_LEVEL;
         break;
     }
+}
+
+void OSCUdpClient::initOscNetwork(QString &ipAddr, QString *portNum){
+    ip = new QString(ipAddr.data(),ipAddr.size());
+    this->port = portNum->toUInt();
+
 }

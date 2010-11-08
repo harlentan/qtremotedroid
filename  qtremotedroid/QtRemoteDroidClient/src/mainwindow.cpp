@@ -106,6 +106,10 @@ void MainWindow::setupUi(QMainWindow *MainWindow)
 
     //udpClientObj = new UDPClient(ip, port);
 
+    qDebug()<<"osc osc osc osc ip"<<ip;
+    qDebug()<<"osc osc osc osc port"<<port;
+
+
     oscUdp = new OSCUdpClient(ip, &port);
 
     QObject::connect(touchPad, SIGNAL(gestureMove(QMouseEvent*)),
@@ -184,10 +188,17 @@ void MainWindow::onSetting(){
 void MainWindow::initNet(QString &tmpIp, QString &tmpPort){
     ip = tmpIp;
     port = tmpPort;
+
+    oscUdp->initOscNetwork(ip, &port);
+
+
+    qDebug() << "the ip is "<< ip;
+    qDebug() << "the por tis"<< port;
 }
 
 void MainWindow::onSubmit(){
     initPanel();
+    initSens();
     setPanel->hide();
     this->show();
     this->showFullScreen();

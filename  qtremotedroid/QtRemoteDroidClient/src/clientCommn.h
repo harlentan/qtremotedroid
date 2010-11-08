@@ -32,9 +32,12 @@ Just add your common define here
 #define SENS_MID_TYPE 0
 #define SENS_LOW_TYPE 1
 
-#define SENS_HIGH_LEVEL 0.6
-#define SENS_MID_LEVEL 0.4
-#define SENS_LOW_LEVEL 0.3
+#define SENS_HIGH_LEVEL 0.9
+#define SENS_MID_LEVEL 0.7
+#define SENS_LOW_LEVEL 0.5
+
+#define QtRdDir "C:\\QtRemoteDroid"
+#define ConfigName "QtRd.xml"
 
 
 #endif // CLIENTCOMMN_H
