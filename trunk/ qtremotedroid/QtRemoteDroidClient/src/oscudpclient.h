@@ -40,6 +40,7 @@ public:
     void addMsgParam(int intArg);
     void addMsgParam(float fArg);
     void setSens(int type);
+    void initOscNetwork(QString &ipAddr, QString *portNum);
 
 signals:
 

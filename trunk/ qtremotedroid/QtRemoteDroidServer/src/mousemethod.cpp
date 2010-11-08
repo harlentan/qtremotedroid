@@ -24,11 +24,13 @@ void MouseMethod::Method(
     QPoint pointHistory;
     QPoint pointNew;
 
+
     pointHistory.setX(QCursor::pos().x());
     pointHistory.setY(QCursor::pos().y());
     pointNew.setX(pointHistory.x() + (int)message->GetFloat(0));
     pointNew.setY(pointHistory.y() + (int)message->GetFloat(1));
 
+    qDebug() << "the pos is"<<pointNew;
     QCursor::setPos(pointNew);
 
 }

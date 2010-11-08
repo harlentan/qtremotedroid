@@ -76,6 +76,11 @@ ClientConfig::ClientConfig(QWidget *parent)
     connect(tmpWin, SIGNAL(goPrevious()), this, SLOT(onPrevious()));
     connect(pSetButn, SIGNAL(clicked()), this, SLOT(onAbout()));
     connect(abPanel, SIGNAL(goOK()), this, SLOT(thisShow()));
+
+    //Create the QtRemoteDroid dir
+    QDir dir;
+    if(!dir.exists(QtRdDir))
+    dir.mkdir(QtRdDir);
 }
 
 ClientConfig::~ClientConfig()
