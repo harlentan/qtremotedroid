@@ -1,0 +1,836 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<meta name="generator" content="MediaWiki 1.15.5">
+		<meta name="keywords" content="MeeGo Porting Guide">
+		<link rel="shortcut icon" href="http://wiki.meego.com/skins/meego/favicon.ico">
+		<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.meego.com/opensearch_desc.php" title="MeeGo wiki (en)">
+		<link title="Creative Commons" type="application/rdf+xml" href="http://wiki.meego.com/index.php?title=MeeGo_Porting_Guide&amp;action=creativecommons" rel="meta">
+		<link rel="copyright" href="http://creativecommons.org/licenses/by/3.0/legalcode">
+		<link rel="alternate" type="application/rss+xml" title="MeeGo wiki RSS feed" href="http://wiki.meego.com/index.php?title=Special:RecentChanges&amp;feed=rss">
+		<link rel="alternate" type="application/atom+xml" title="MeeGo wiki Atom feed" href="http://wiki.meego.com/index.php?title=Special:RecentChanges&amp;feed=atom">
+		<title>MeeGo Porting Guide - MeeGo wiki</title>
+		<link rel="stylesheet" href="MeeGo_Porting_Guide_files/shared.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="MeeGo_Porting_Guide_files/main.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="MeeGo_Porting_Guide_files/print.css" type="text/css" media="print">
+		<link rel="stylesheet" href="MeeGo_Porting_Guide_files/index_002.css" type="text/css">
+		<link rel="stylesheet" href="MeeGo_Porting_Guide_files/index_003.css" type="text/css" media="print">
+		<link rel="stylesheet" href="MeeGo_Porting_Guide_files/index_004.css" type="text/css">
+		<link rel="stylesheet" href="MeeGo_Porting_Guide_files/index.css" type="text/css">		<!--[if lt IE 7]><meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type="text/javascript">/*<![CDATA[*/
+		var skin = "meego";
+		var stylepath = "/skins";
+		var wgArticlePath = "/$1";
+		var wgScriptPath = "";
+		var wgScript = "/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wiki.meego.com";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "MeeGo_Porting_Guide";
+		var wgTitle = "MeeGo Porting Guide";
+		var wgAction = "view";
+		var wgArticleId = "201";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 17075;
+		var wgVersion = "1.15.5";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgMWSuggestTemplate = "http://wiki.meego.com/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest";
+		var wgDBname = "meego_wiki";
+		var wgSearchNamespaces = [0];
+		var wgMWSuggestMessages = ["with suggestions", "no suggestions"];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+                
+		<script type="text/javascript" src="MeeGo_Porting_Guide_files/wikibits.js"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="MeeGo_Porting_Guide_files/ajax.js"></script>
+		<script type="text/javascript" src="MeeGo_Porting_Guide_files/mwsuggest.js"></script>
+		<script type="text/javascript" src="MeeGo_Porting_Guide_files/index.php"><!-- site js --></script>
+	</head><body class="mediawiki ltr ns-0 ns-subject page-MeeGo_Porting_Guide skin-meego">
+
+	<!-- heading -->
+	<div id="mw_header"><div id="firstHeading"><a href="http://wiki.meego.com/Main_Page"><strong>Meego Wiki</strong></a></div></div>
+
+	<div id="mw_main">
+	<div id="mw_contentwrapper">
+	<!-- navigation portlet -->
+	<div id="p-cactions">
+		<h5>Views</h5>
+		<div class="pBody">
+    	<h1 id="PageTitle">MeeGo Porting Guide</h1>
+			<ul>
+      		
+	
+				 <li id="ca-nstab-main" class="selected"><a href="http://wiki.meego.com/MeeGo_Porting_Guide" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk"><a href="http://wiki.meego.com/Talk:MeeGo_Porting_Guide" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="http://wiki.meego.com/index.php?title=MeeGo_Porting_Guide&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="http://wiki.meego.com/index.php?title=MeeGo_Porting_Guide&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+
+	<!-- content -->
+	<div id="mw_content">
+	<!-- contentholder does nothing by default, but it allows users to style the text inside
+	     the content area without affecting the meaning of 'em' in #mw_content, which is used
+	     for the margins -->
+	<div id="mw_contentholder">
+		<div class="mw-topboxes">
+			<div id="mw-js-message" style="display: none;"></div>
+			<div class="mw-topbox" id="siteSub">From MeeGo wiki</div>
+								</div>
+
+		<div id="contentSub"></div>
+
+				<div id="jump-to-nav">Jump to: <a href="#mw_portlets">navigation</a>, <a href="#searchInput">search</a></div>
+		<table id="toc" class="toc" summary="Contents"><tbody><tr><td><div id="toctitle"><h2>Contents</h2> <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Feedback"><span class="tocnumber">1.1</span> <span class="toctext">Feedback</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#General_porting_information.2Fguidelines"><span class="tocnumber">2</span> <span class="toctext">General porting information/guidelines</span></a>
+<ul>
+<li class="toclevel-2"><a href="#MeeGo_compliance"><span class="tocnumber">2.1</span> <span class="toctext">MeeGo compliance</span></a></li>
+<li class="toclevel-2"><a href="#Porting_process_and_tools"><span class="tocnumber">2.2</span> <span class="toctext">Porting process and tools</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Overview"><span class="tocnumber">2.2.1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-3"><a href="#Vendor.27s_own_OBS"><span class="tocnumber">2.2.2</span> <span class="toctext">Vendor's own OBS</span></a></li>
+<li class="toclevel-3"><a href="#Working_under_MeeGo.com"><span class="tocnumber">2.2.3</span> <span class="toctext">Working under MeeGo.com</span></a></li>
+<li class="toclevel-3"><a href="#Trials"><span class="tocnumber">2.2.4</span> <span class="toctext">Trials</span></a>
+<ul>
+<li class="toclevel-4"><a href="#Initial_bring-up_attempt"><span class="tocnumber">2.2.4.1</span> <span class="toctext">Initial bring-up attempt</span></a></li>
+<li class="toclevel-4"><a href="#Building_your_first_image"><span class="tocnumber">2.2.4.2</span> <span class="toctext">Building your first image</span></a></li>
+<li class="toclevel-4"><a href="#Building_your_port.27s_first_reproduciable_image"><span class="tocnumber">2.2.4.3</span> <span class="toctext">Building your port's first reproduciable image</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3"><a href="#Getting_new_chipset_support_to_the_MeeGo_kernel"><span class="tocnumber">2.2.5</span> <span class="toctext">Getting new chipset support to the MeeGo kernel</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Upstream_projects.2C_MeeGo.2C_products_and_patches"><span class="tocnumber">2.3</span> <span class="toctext">Upstream projects, MeeGo, products and patches</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Porting_by_functional_areas"><span class="tocnumber">3</span> <span class="toctext">Porting by functional areas</span></a>
+<ul>
+<li class="toclevel-2"><a href="#HW_adaptation_interfaces"><span class="tocnumber">3.1</span> <span class="toctext">HW adaptation interfaces</span></a></li>
+<li class="toclevel-2"><a href="#Fundamental_functionality"><span class="tocnumber">3.2</span> <span class="toctext">Fundamental functionality</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Boot"><span class="tocnumber">3.2.1</span> <span class="toctext">Boot</span></a></li>
+<li class="toclevel-3"><a href="#Kernel_fundamentals"><span class="tocnumber">3.2.2</span> <span class="toctext">Kernel fundamentals</span></a></li>
+<li class="toclevel-3"><a href="#Power_and_thermal_management"><span class="tocnumber">3.2.3</span> <span class="toctext">Power and thermal management</span></a></li>
+<li class="toclevel-3"><a href="#Energy_management"><span class="tocnumber">3.2.4</span> <span class="toctext">Energy management</span></a></li>
+<li class="toclevel-3"><a href="#Security"><span class="tocnumber">3.2.5</span> <span class="toctext">Security</span></a></li>
+<li class="toclevel-3"><a href="#Device_state.2Fbehaviour_management"><span class="tocnumber">3.2.6</span> <span class="toctext">Device state/behaviour management</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Display_and_graphics"><span class="tocnumber">3.3</span> <span class="toctext">Display and graphics</span></a></li>
+<li class="toclevel-2"><a href="#Media"><span class="tocnumber">3.4</span> <span class="toctext">Media</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Audio"><span class="tocnumber">3.4.1</span> <span class="toctext">Audio</span></a></li>
+<li class="toclevel-3"><a href="#Still_imaging"><span class="tocnumber">3.4.2</span> <span class="toctext">Still imaging</span></a></li>
+<li class="toclevel-3"><a href="#Video_imaging"><span class="tocnumber">3.4.3</span> <span class="toctext">Video imaging</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Communications"><span class="tocnumber">3.5</span> <span class="toctext">Communications</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Cellular"><span class="tocnumber">3.5.1</span> <span class="toctext">Cellular</span></a></li>
+<li class="toclevel-3"><a href="#USB"><span class="tocnumber">3.5.2</span> <span class="toctext">USB</span></a></li>
+<li class="toclevel-3"><a href="#WLAN"><span class="tocnumber">3.5.3</span> <span class="toctext">WLAN</span></a></li>
+<li class="toclevel-3"><a href="#Bluetooth"><span class="tocnumber">3.5.4</span> <span class="toctext">Bluetooth</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#User.2Fenvironment_IO"><span class="tocnumber">3.6</span> <span class="toctext">User/environment IO</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Location"><span class="tocnumber">3.6.1</span> <span class="toctext">Location</span></a></li>
+<li class="toclevel-3"><a href="#Sensors"><span class="tocnumber">3.6.2</span> <span class="toctext">Sensors</span></a></li>
+<li class="toclevel-3"><a href="#Touch"><span class="tocnumber">3.6.3</span> <span class="toctext">Touch</span></a></li>
+<li class="toclevel-3"><a href="#HW_keyboard"><span class="tocnumber">3.6.4</span> <span class="toctext">HW keyboard</span></a></li>
+<li class="toclevel-3"><a href="#Haptics"><span class="tocnumber">3.6.5</span> <span class="toctext">Haptics</span></a></li>
+<li class="toclevel-3"><a href="#Vibra_.28notifications.2Falerts.29"><span class="tocnumber">3.6.6</span> <span class="toctext">Vibra (notifications/alerts)</span></a></li>
+<li class="toclevel-3"><a href="#Miscellaneous_.28LEDs.2C_keys.2C_switches_etc..29"><span class="tocnumber">3.6.7</span> <span class="toctext">Miscellaneous (LEDs, keys, switches etc.)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Flashing.2C_testing.2C_tuning.2C_certification"><span class="tocnumber">3.7</span> <span class="toctext">Flashing, testing, tuning, certification</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></tbody></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Introduction" id="Introduction"></a><h2> <span class="mw-headline"> Introduction </span></h2>
+<p>The goal of MeeGo Porting Guide (MPG) is to provide valuable 
+information and instructions to people who want to run MeeGo OS on their
+ (new) HW and eventually create products based on the MeeGo OS. The MPG 
+starts with an overview of the porting process, tools and other related 
+background information and then moves on to describing what the porting 
+actually means in individual technical/functional areas.
+</p><p>The porting guide is not strictly tied to any particular MeeGo OS
+ version or device category. Instead it tries to be general enough to 
+cover the different device categories as well as follow changes 
+introduced in new MeeGo OS versions.
+</p><p>Detailed porting information in the different technical areas is dependent on the respective <a href="http://meego.com/developers/meego-architecture" class="external text" title="http://meego.com/developers/meego-architecture" rel="nofollow">MeeGo architecture</a>. In some cases, this architecture may still be open and this is noted in the applicable sections.
+</p>
+<a name="Feedback" id="Feedback"></a><h3> <span class="mw-headline"> Feedback </span></h3>
+<p>Contribution to these pages is open. Any MeeGo community member is free to <i>improve</i> these pages at any time. You can also leave feedback in the <a href="http://lists.meego.com/listinfo/meego-porting" class="external text" title="http://lists.meego.com/listinfo/meego-porting" rel="nofollow">MeeGo porting mailing list</a>.
+</p>
+<a name="General_porting_information.2Fguidelines" id="General_porting_information.2Fguidelines"></a><h2> <span class="mw-headline"> General porting information/guidelines </span></h2>
+<a name="MeeGo_compliance" id="MeeGo_compliance"></a><h3> <span class="mw-headline"> MeeGo compliance </span></h3>
+<p>Perhaps the most important piece of background information related to the MPG are the <a href="http://wiki.meego.com/Quality/Compliance" class="external text" title="http://wiki.meego.com/Quality/Compliance" rel="nofollow">MeeGo compliance requirements</a>.
+ A device that is meant to be MeeGo compliant will need to fulfill the 
+requirements listed in the MeeGo compliance specification for the 
+applicable device category (the first version of the specification is 
+supposed to be available in October 2010). In short, a MeeGo compliant 
+device will need to:
+</p>
+<ul><li> Meet the minimum HW performance and component requirements for the applicable device category
+</li><li> Include all SW components that form the MeeGo core OS
+</li><li> Include the additional SW components required to be present in devices in the applicable device category
+</li><li> Not break the API/ABI of any of the components coming from MeeGo
+</li><li> Follow the MeeGo SW packaging conventions
+</li></ul>
+<p>The compliance rules will also specify CPU architecture specific 
+requirements concerning how MeeGo OS itself and MeeGo applications are 
+to be compiled to different environments (instruction set used, compiler
+ version, compiler options etc.).
+</p><p>A device vendor may include additional functionality, HW 
+components and SW components in their devices as long as they don't 
+break MeeGo compliance. The vendor can also patch MeeGo OS components if
+ the patches don't break MeeGo compliance. A device vendor's own SW 
+components can be either open source or closed source components as long
+ as they adhere to the rules set by the applicable SW licenses.
+</p><p>From the MeeGo Porting Guide perspective, the compliance 
+requirements - by defining the SW components and HW components that need
+ to be present - effectively define the minimum set of porting tasks 
+required from a device vendor and what SW components are involved from 
+MeeGo OS side.
+</p>
+<a name="Porting_process_and_tools" id="Porting_process_and_tools"></a><h3> <span class="mw-headline"> Porting process and tools </span></h3>
+<a name="Overview" id="Overview"></a><h4> <span class="mw-headline"> Overview </span></h4>
+<p>As long as some vendor's device is MeeGo compliant as defined above, 
+it is basically up to the vendor to decide how they build the SW that 
+ends up in the device. The vendor may use their own build machinery or 
+setup an OBS build system that is used also in MeeGo. Regardless of what
+ the vendor's build system is, it needs to integrate with the MeeGo 
+build infrastructure at least to fetch the MeeGo source packages for the
+ builds as well as build each MeeGo component in the same way as it 
+would be built in the MeeGo build system (e.g. with the same compiler 
+and compiler options). Whatever the case, the intention in MeeGo is to 
+use and offer an open toolset that any HW or SW vendor can use for 
+efficient SW creation. It is likely that using the same toolset as MeeGo
+ will offer the easiest way to integrate vendor's own build system with 
+the the MeeGo build infrastructure.
+</p><p>The key ingredients of the MeeGo build infrastructure and toolset are:
+</p>
+<ul><li> <a href="http://meego.gitorious.org/" class="external text" title="http://meego.gitorious.org" rel="nofollow">MeeGo Gitorious</a>
+<ul><li> A version control system for the source files of various MeeGo specific SW components and tools
+</li></ul>
+</li><li> <a href="http://build.meego.com/" class="external text" title="http://build.meego.com" rel="nofollow">MeeGo OBS</a>
+<ul><li> The build system that is used to build MeeGo packages (RPMs) from their sources
+</li></ul>
+</li><li> <a href="http://repo.meego.com/" class="external text" title="http://repo.meego.com" rel="nofollow">MeeGo Repository</a>
+<ul><li> The place where the built MeeGo releases, i.e. MeeGo packages and images are stored
+</li></ul>
+</li><li> <a href="http://wiki.meego.com/Image_Creation" class="external text" title="http://wiki.meego.com/Image_Creation" rel="nofollow">MeeGo Image Creator</a>
+<ul><li> The tool used to build MeeGo images that can be installed/flashed on HW
+</li></ul>
+</li><li> MeeGo release tools
+<ul><li> Tools such as BOSS and REVS that are used in the creation of the MeeGo releases under repo.meego.com
+</li></ul>
+</li></ul>
+<p>For additional information, see <a href="http://wiki.meego.com/Build_Infrastructure" class="external text" title="http://wiki.meego.com/Build_Infrastructure" rel="nofollow">Build Infrastructure</a>, <a href="http://wiki.meego.com/Release_Infrastructure" class="external text" title="http://wiki.meego.com/Release_Infrastructure" rel="nofollow">Release Infrastructure</a> and <a href="http://wiki.meego.com/Release_Engineering" class="external text" title="http://wiki.meego.com/Release_Engineering" rel="nofollow">Release Engineering</a>.
+</p><p>For another overview of the MeeGo porting process, see <a href="http://meego.com/developers/hardware-enabling-process" class="external text" title="http://meego.com/developers/hardware-enabling-process" rel="nofollow">Hardware Enabling Process</a>.
+</p>
+<a name="Vendor.27s_own_OBS" id="Vendor.27s_own_OBS"></a><h4> <span class="mw-headline"> Vendor's own OBS </span></h4>
+<p>So, ultimately, when creating actual products running the MeeGo OS, 
+the vendor may end up setting up their own OBS build system. An own OBS 
+system may also be beneficial in earlier HW/product development phases 
+as it offers a flexible way to modify and build MeeGo OS to test it on 
+the new HW. The vendor's own OBS system can link to the MeeGo OBS for 
+handling packages that come directly from MeeGo and it an link to other 
+sources for handling e.g. closed source packages that are specific to 
+the vendor. An overview picture of this setup can be found from <a href="http://wiki.meego.com/Release_Engineering/Process#Making_a_product_out_of_MeeGo_Release" class="external text" title="http://wiki.meego.com/Release_Engineering/Process#Making_a_product_out_of_MeeGo_Release" rel="nofollow">here</a>.
+</p><p>In this setup, the vendor:
+</p>
+<ul><li> Sets up their own OBS system
+<ul><li> Instructions related to setting up an OBS system can be found from <a href="http://wiki.meego.com/User:Stskeeps/10_easy_steps_to_a_local_OBS" class="external text" title="http://wiki.meego.com/User:Stskeeps/10_easy_steps_to_a_local_OBS" rel="nofollow">here</a> and <a href="http://wiki.meego.com/Build_Infrastructure/Sysadmin_Distro/OBS_setup_openSUSE112" class="external text" title="http://wiki.meego.com/Build_Infrastructure/Sysadmin_Distro/OBS_setup_openSUSE112" rel="nofollow">here</a>.
+</li></ul>
+</li><li> Creates projects under the their own OBS for their own components
+</li><li> Links their own OBS to the MeeGo OBS for MeeGo components
+</li><li> May have trial patches to MeeGo components in their own OBS
+<ul><li> NOTE. Eventually all patches to MeeGo components required in a final MeeGo based product <i>should</i>
+ be pushed to MeeGo.com. However, this is not an absolute must 
+requirement as long as the MeeGo compliance requirements and applicable 
+SW license rules are fulfilled. 
+</li><li> See <a href="#Upstream_projects.2C_MeeGo.2C_products_and_patches" title=""><i>Upstream projects, MeeGo, products and patches</i></a> below
+</li></ul>
+</li><li> Needs to setup the necessary machinery to create releases and images from the packages built with OBS
+<ul><li> This machinery can be based on the toolset used in MeeGo (see above)
+</li></ul>
+</li></ul>
+<a name="Working_under_MeeGo.com" id="Working_under_MeeGo.com"></a><h4> <span class="mw-headline"> Working under MeeGo.com </span></h4>
+<p>Another way of porting MeeGo to some new HW is to get the new HW 
+accepted as one MeeGo reference HW and have the MeeGo build machinery 
+create builds for the reference HW as a part of the normal MeeGo release
+ building cycle (see <a href="http://wiki.meego.com/Release_Engineering/Release_Timeline" class="external text" title="http://wiki.meego.com/Release_Engineering/Release_Timeline" rel="nofollow">Release Timeline</a> and <a href="http://wiki.meego.com/Release_Engineering/Process" class="external text" title="http://wiki.meego.com/Release_Engineering/Process" rel="nofollow">Release Process</a>). This setup can also include QA support for the reference HW on the MeeGo side (see <a href="http://wiki.meego.com/Quality" class="external text" title="http://wiki.meego.com/Quality" rel="nofollow">Quality</a>).
+ At the time of this writing, the actual process of getting new 
+reference HW to MeeGo is still somewhat unclear. In any case, this model
+ requires active participation from the vendor in MeeGo work in general 
+and especially in supporting their reference HW in MeeGo.
+</p><p>In this setup, the vendor:
+</p>
+<ul><li> Creates a device/platform development project under the MeeGo 
+OBS for their components. The open source components would then get 
+submitted to MeeGo Trunk:Testing and get reviewed like any other MeeGo 
+component for inclusion.
+<ul><li> Note that it is also possible to have closed source binary 
+components in the MeeGo OBS to be included in the MeeGo builds for some 
+reference HW. These are submitted to the Trunk:non-oss repository. 
+Licensing is usually required to at least include redistributability as 
+the components cannot be mirrored from or hosted at repo.meego.com 
+otherwise. It is not possible to have components within Trunk:Testing 
+require closed source dependencies.
+</li></ul>
+</li><li> Pushes patches to other MeeGo components at MeeGo.com as necessary (see <a href="#Upstream_projects.2C_MeeGo.2C_products_and_patches" title=""><i>Upstream projects, MeeGo, products and patches</i></a> below)
+</li><li> Creates (or supports the creation of) a MIC kickstart file for building images for their reference HW
+</li><li> As necessary, supports adding support for their reference HW 
+and SW components in the MeeGo build and release infrastructure tools
+</li></ul>
+<a name="Trials" id="Trials"></a><h4> <span class="mw-headline"> Trials </span></h4>
+<p>A lightweight but also more limited "try it out" alternative to the above processes is discussed below.
+</p>
+<a name="Initial_bring-up_attempt" id="Initial_bring-up_attempt"></a><h5> <span class="mw-headline"> Initial bring-up attempt </span></h5>
+<ul><li> Grab an already built root filesystem / image for a MeeGo 
+reference device that's the most closest to your target. For ARMv7 this 
+is typically the Nokia N900 handset image, for Atom, this could be 
+netbook image or handset image.
+</li><li> Build a Linux kernel for your device and install the modules into /lib/modules.
+</li><li> Boot the root filesystem and modify the configuration and drop
+ in components to bring up the device to UX. Note down the things you 
+had to modify or add as this will be input for your porting work.
+</li></ul>
+<a name="Building_your_first_image" id="Building_your_first_image"></a><h5> <span class="mw-headline"> Building your first image </span></h5>
+<p>The second step to a proper hardware adaptation is making sure you 
+can build your own image. Since we based our work before on a reference 
+device image, it makes sense to try to build this image first. MeeGo 
+images are constructed on the basis of so called 'kickstart files' which
+ describe the intended contents of a image. 
+</p>
+<ul><li> Install the MeeGo Image Creator tool (MIC)
+</li><li> Download the kickstart file (.ks) from the same directory you found your reference device image. 
+</li><li> Create a image using mic-image-creator (should be elaborated).
+</li><li> Test our your freshly baked image as in previous step.
+</li></ul>
+<a name="Building_your_port.27s_first_reproduciable_image" id="Building_your_port.27s_first_reproduciable_image"></a><h5> <span class="mw-headline"> Building your port's first reproduciable image </span></h5>
+<ul><li> Download the MeeGo kernel, possibly modifying the kernel with 
+additional patches (including new device drivers) and building the 
+kernel (see <a href="#Getting_new_chipset_support_to_the_MeeGo_kernel" title=""><i>Getting new chipset support to the MeeGo kernel</i></a> below). 
+</li><li> Add the repository containing your kernel package to the kickstart fine (to be elaborated)
+</li><li> Remove parts of the kickstart file specific to the reference device.
+</li><li> Add a mention of your kernel package in the&nbsp;%packages section.
+</li><li> Build packages or include shell scripts in&nbsp;%post section 
+of kickstart file that adds/modifies configuration fitting your device.
+</li></ul>
+<p>A detailed description of a variation of this model can be found from <a href="http://wiki.meego.com/ARM/Meego_on_Beagleboard_from_scratch" class="external text" title="http://wiki.meego.com/ARM/Meego_on_Beagleboard_from_scratch" rel="nofollow">here</a> (Better description needed).
+</p>
+<a name="Getting_new_chipset_support_to_the_MeeGo_kernel" id="Getting_new_chipset_support_to_the_MeeGo_kernel"></a><h4> <span class="mw-headline"> Getting new chipset support to the MeeGo kernel </span></h4>
+<p>See <a href="http://wiki.meego.com/How-to:_getting_new_chipset_support_to_the_MeeGo_kernel" class="external text" title="http://wiki.meego.com/How-to:_getting_new_chipset_support_to_the_MeeGo_kernel" rel="nofollow">How-to: getting new chipset support to the MeeGo kernel</a> for more detailed information about how to work with the MeeGo kernel and make it support new HW.
+</p>
+<a name="Upstream_projects.2C_MeeGo.2C_products_and_patches" id="Upstream_projects.2C_MeeGo.2C_products_and_patches"></a><h3> <span class="mw-headline"> Upstream projects, MeeGo, products and patches </span></h3>
+<p>When building a product based on MeeGo, the product vendor will 
+typically augment the MeeGo OS with their own SW components as well as 
+make fixes and adjustments to the MeeGo OS code (in the limits set by 
+the compliance rules). While vendors can manage their own SW components 
+as they wish, the strong preference is that any changes made to the 
+MeeGo OS SW components are delivered as patches primarily to the 
+respective upstream projects or secondarily to MeeGo.com. In this way 
+vendors can relieve themselves from the burden of managing a potentially
+ big patch set on top of MeeGo OS and also verify the quality and safety
+ of their patches. Having the patches in upstream projects again lessens
+ the patch set management load at MeeGo.com.
+</p><p>For information about pushing patches to MeeGo, see <a href="http://meego.com/about/contribution-guidelines" class="external text" title="http://meego.com/about/contribution-guidelines" rel="nofollow">Contribution Guidelines</a> and <a href="http://meego.com/developers/hardware-enabling-process" class="external text" title="http://meego.com/developers/hardware-enabling-process" rel="nofollow">Hardware Enabling Process</a> (especially section <i>How Do Patches Get Integrated and Accepted?</i>) and <a href="http://meego.gitorious.org/meego-os-base/kernel-source/blobs/master/README.workflow" class="external text" title="http://meego.gitorious.org/meego-os-base/kernel-source/blobs/master/README.workflow" rel="nofollow">Kernel workflow</a>.
+</p>
+<a name="Porting_by_functional_areas" id="Porting_by_functional_areas"></a><h2> <span class="mw-headline"> Porting by functional areas </span></h2>
+<a name="HW_adaptation_interfaces" id="HW_adaptation_interfaces"></a><h3> <span class="mw-headline"> HW adaptation interfaces </span></h3>
+<p>The key goal in the sections below is to identify the SW interface(s)
+ through which the MeeGo OS generic SW components communicate with the 
+HW adaptation SW. These interfaces are effectively the SW interfaces 
+that the HW adaptation SW needs to implement/use towards MeeGo OS. 
+Behind these interfaces the HW adaptation SW components can basically do
+ their job as they see best. In some cases, however, there may be some 
+preferred (but not required) way of implementing the adaptation.
+</p><p>In some functional areas, the adaptation work may consist of just
+ writing a suitable Linux device driver for the HW in question. In some 
+other areas, the adaptation work may consist of writing one or more 
+device drivers as well as one or more plugins to some user-space SW 
+frameworks. Various configuration file changes may also be a required 
+part of the adaptation work.
+</p>
+<a name="Fundamental_functionality" id="Fundamental_functionality"></a><h3> <span class="mw-headline"> Fundamental functionality </span></h3>
+<a name="Boot" id="Boot"></a><h4> <span class="mw-headline"> Boot </span></h4>
+<p>MeeGo places no restrictions as to what SW components are used to 
+handle the pre-OS boot phases in a MeeGo compliant device. Thus, vendors
+ are free to choose e.g. the boot loader as they see fit. Note however 
+that full utilization of the MeeGo platform security requires that the 
+pre-OS boot phases form a trusted boot chain that ultimately builds on 
+chipset-level security support.
+</p><p>At the time of this writing, MeeGo does not define anything 
+special with regard to what information the boot loader is expected to 
+pass to the Linux kernel e.g. via the kernel command line.
+</p><p>The kernel-level boot phases can be tailored as necessary to the specific CPU, chipset or device in a standard Linux manner.
+</p><p>The post-kernel boot phases (startup scripts) can be tailored by 
+device vendors as necessary for their devices in the limits set by MeeGo
+ compliance requirements (certain SW components need to be present in 
+the system).
+</p>
+<a name="Kernel_fundamentals" id="Kernel_fundamentals"></a><h4> <span class="mw-headline"> Kernel fundamentals </span></h4>
+<p>Regarding the Linux kernel, each MeeGo release defines the kernel 
+version to be used and a set of patches on top of that. In addition, the
+ Linux kernel used in MeeGo compliant devices is assumed to have been 
+built with a set of fixed build-time configuration values that are not 
+allowed to be changed. In addition to the fixed values, device vendors 
+can define other kernel configuration values as required by their 
+devices.
+</p><p>MeeGo does place any special requirements concerning how the boot
+ loader passes information to the kernel or how the HW configuration and
+ initialization of the system is handled.
+</p><p>CPU, chipset (SoC) and device vendors are assumed to implement 
+the elementary CPU architecture/chipset/device support for the Linux 
+kernel used in MeeGo in a standard Linux manner. This includes:
+</p>
+<ul><li> HW (board) configuration
+</li><li> Mapping the fundamental Linux kernel functionality (e.g. IRQ, DMA, GPIO, RTC and memory handling) to the HW in question
+</li><li> Creation/modification of the necessary device drivers to support the core SoC interfaces (e.g. I2C, SPI, SDIO)
+</li><li> Permanent memory support
+</li><li> Debugging and tracing support
+</li></ul>
+<a name="Power_and_thermal_management" id="Power_and_thermal_management"></a><h4> <span class="mw-headline"> Power and thermal management </span></h4>
+<p>At the time of this writing, the understanding is that MeeGo in 
+general relies on established Linux kernel frameworks and APIs for power
+ management. Some of these frameworks and APIs may be applicable only in
+ certain CPU architectures. In addition, the HW capabilities related to 
+power management may vary between different HW platforms potentially 
+meaning that the SW is assumed perform somewhat different tasks in 
+different environments.
+</p><p>The Linux power management frameworks and APIs include:
+</p>
+<ul><li> CPU frequency control (support for the different voltage and frequency operating points) via the cpufreq infrastructure
+</li><li> CPU idle state management (different levels of sleep) through the cpuidle infrastructure
+</li><li> Clock management through the clock framework
+</li><li> Suspend/resume
+</li><li> Runtime power management
+</li><li> HW voltage/current regulator control via the regulator framework
+</li><li> PM_QOS (power management quality of service) framework for making and listening to PM QoS requests
+</li></ul>
+<p>Whether MeeGo will have some user space SW components or framework 
+related to power management is under discussion at the time of this 
+writing.
+</p><p>In the thermal management area, the Device State Management 
+Entity (DSME) component in the Device Health subsystem is supposed to 
+make thermal state management decisions in the system. The DSME has a 
+thermal manager module that again uses other DSME modules (thermal 
+objects) to access the actual thermal sensor information in the HW. To 
+port this functionality to new HW, one or more DSME thermal object 
+modules need to be implemented.
+</p><p>The APIs that the thermal object modules use to access the 
+thermal sensor information are not strictly defined by MeeGo. At device 
+driver level, however, the preferred approach is to utilize standard 
+Linux interfaces such as the generic thermal sysfs API or the hwmon 
+sysfs API.
+</p>
+<a name="Energy_management" id="Energy_management"></a><h4> <span class="mw-headline"> Energy management </span></h4>
+<p>At the time of this writing, basically the only thing that MeeGo 
+requires from HW adaptation in the energy management area (battery 
+charging and monitoring) is support for the Linux power supply sysfs 
+class. Additional energy management related functionality can be handled
+ in a vendor specific manner.
+</p>
+<a name="Security" id="Security"></a><h4> <span class="mw-headline"> Security </span></h4>
+<p>Work is ongoing in bringing platform security functionality to the 
+MeeGo OS based on the Mandatory Access Control (MAC), Integrity 
+Measurement Architecture (IMA) and Extended Verification Module (EVM) 
+technologies in the Linux kernel. Maximum security can be reached if the
+ MeeGo platform security functionality can rely on trusted platform 
+support "below" the Linux kernel, effectively in the HW and the boot 
+loader(s). MeeGo, however, places no strict requirements as to how the 
+trusted platform support is implemented in MeeGo based devices.
+</p><p>MeeGo also includes the OpenSSL open source toolkit implementing 
+general purpose cryptography functionality. Algorithms and operations 
+supported by the OpenSSL toolkit can be accelerated in HW by using the 
+OpenSSL engine architecture. OpenSSL also supports a cryptodev engine 
+that uses crypto algorithms implemented in the Linux kernel.
+</p><p>Some devices may have a security watchdog in the HW that needs 
+"kicking" at regular intervals to keep the device up and running. In 
+MeeGo, watchdog kicking functionality is implemented in the Device State
+ Management Entity (DSME) component. If security watchdog kicking is 
+needed, the DSME needs to be adapted to handle that through the right 
+device driver interface and at the right intervals.
+</p>
+<a name="Device_state.2Fbehaviour_management" id="Device_state.2Fbehaviour_management"></a><h4> <span class="mw-headline"> Device state/behaviour management </span></h4>
+<p>The DSME component participates in device state management e.g. by 
+managing device run level, reboot and shutdown, by monitoring the device
+ thermal state and shutting down the device in fatal thermal conditions,
+ and by handling HW watchdog kicking activity.
+</p><p>In a new HW environment, the DSME needs to be adapted to handle 
+the watchdog kicking through the right device driver interfaces and at 
+the right intervals. In addition, to port the DSME thermal management 
+functionality to new HW, one or more DSME thermal object modules need to
+ be implemented as described above in the <a href="#Power_and_thermal_management" title=""><i>Power and thermal management</i></a> section.
+</p><p>The Resource (Policy) Manager component in the Device Health subsystem offers a generic framework for:
+</p>
+<ul><li> Monitoring device and application events
+</li><li> Managing policies that specify rules about what should happen in the device when certain events occur
+</li><li> Making policy decisions when events occur (determining the needed changes in the device)
+</li><li> Enforcing changes in the system through policy enforcement points
+</li></ul>
+<p>The Resource Manager can be used e.g. to change the audio routing in 
+the device when the user attaches a wired headset to the device.
+</p><p>Event listening and change enforcement in the Resource Manager 
+happens through plugin modules. Using the MeeGo OS in some new device 
+effectively involves creating suitable Resource Manager policies and 
+writing the necessary plugins for listening device/application events 
+and changing device behaviour accordingly. Though not pure HW 
+adaptation, this can be considered as a form of MeeGo OS "device 
+adaptation".
+</p>
+<a name="Display_and_graphics" id="Display_and_graphics"></a><h3> <span class="mw-headline"> Display and graphics </span></h3>
+<p>For an overview of the MeeGo visual services architecture, see <a href="http://meego.com/developers/meego-architecture/visual-services" class="external text" title="http://meego.com/developers/meego-architecture/visual-services" rel="nofollow">Visual Services</a>. 
+</p><p>The key ingredients of the display and graphics architecture in 
+MeeGo are the X Window System (X Server with its extensions) and the 
+Khronos graphics APIs (OpenGL ES, OpenVG and EGL with their extensions).
+</p><p>The display and graphics HW adaptation SW needs to enable the X 
+Window System and the Khronos APIs to function on the device HW. In 
+practice, the adaptation SW needs to have an X display/video driver 
+(hosted inside the X Server) and libraries that implement the Khronos 
+graphics APIs, both supporting the features and functionality required 
+by MeeGo. Also some configuration file changes may be needed. Any 
+additional user space and kernel space components needed for the HW 
+adaptation are implementation dependent.
+</p><p>If the device supports delivering display content to external 
+displays, the Resource Manager component may be used to coordinate the 
+display routing related behavior of the device.
+</p>
+<a name="Media" id="Media"></a><h3> <span class="mw-headline"> Media </span></h3>
+<p>For an overview of the MeeGo media services architecture, see <a href="http://meego.com/developers/meego-architecture/media-services" class="external text" title="http://meego.com/developers/meego-architecture/media-services" rel="nofollow">Media Services</a>. 
+</p>
+<a name="Audio" id="Audio"></a><h4> <span class="mw-headline"> Audio </span></h4>
+<p>The audio architecture in MeeGo is centered around the GStreamer and 
+PulseAudio frameworks. In addition, the Resource Manager plays a role in
+ coordinating the audio related behavior of the device (audio routings).
+ The audio HW adaptation SW needs to provide GStreamer elements and 
+PulseAudio plugins that enable the GStreamer and PulseAudio client 
+interfaces used for e.g. for audio playback, recording and volume 
+control to work on the device. Typical required components include e.g. 
+codec elements for GStreamer and sink/source plugins for PulseAudio.
+</p><p>Behind the GStreamer and PulseAudio plugins, the audio HW 
+adaptation SW can be implemented with different technologies and APIs, 
+including ALSA and OpenMAX. In case OpenMAX components are used, the 
+gst-omx package must be used to offer those to the GStreamer framework 
+as needed. Use of the ALSA framework and APIs is encouraged, however, as
+ they allow significant reuse of components and functionality on the 
+PulseAudio level and are already a part of the upstream Linux kernel. If
+ ALSA is not used to implement the kernel side parts of the audio 
+adaptation, the solution that is used instead should still be aligned 
+with the upstream Linux kernel.
+</p>
+<a name="Still_imaging" id="Still_imaging"></a><h4> <span class="mw-headline"> Still imaging </span></h4>
+<p>The central pieces of the MeeGo still imaging architecture are the <a href="http://gstreamer.freedesktop.org/" class="external text" title="http://gstreamer.freedesktop.org/" rel="nofollow">GStreamer</a>
+ multimedia framework and the CameraBin GStreamer element. The still 
+imaging HW adaptation SW is required to contain a GStreamer camera 
+source element to be used "inside" the CameraBin element. Thus, the 
+required HW adaptation interfaces are the relevant GStreamer plugin 
+interfaces and especially the interfaces expected by the CameraBin 
+element, in particular the GstPhotography interface.
+</p><p>If HW accelerated encoders are supported, they should be also offered to the system as GStreamer elements.
+</p><p>Behind the GStreamer elements, the HW adaptation SW can be 
+implemented with different technologies and APIs, including V4L2 and 
+OpenMAX. In case OpenMAX components are used, the gst-omx package must 
+be used to offer those to the GStreamer framework.
+</p>
+<a name="Video_imaging" id="Video_imaging"></a><h4> <span class="mw-headline"> Video imaging </span></h4>
+<p>The central pieces of the MeeGo video imaging architecture are the <a href="http://gstreamer.freedesktop.org/" class="external text" title="http://gstreamer.freedesktop.org/" rel="nofollow">GStreamer</a>
+ multimedia framework, the CameraBin GStreamer element (video recording)
+ and the Playbin2 GStreamer element (video playback). The video imaging 
+HW adaptation SW is required to contain:
+</p>
+<dl><dd><ul><li> A GStreamer camera source element to be used "inside" the CameraBin element (this is common with still imaging) 
+</li><li> If HW accelerated codecs are supported, GStreamer elements that wrap the codecs
+</li><li> If HW accelerated filters are supported (e.g. video scaler, 
+rotation engines, color conversion engines), GStreamer elements that 
+wrap the filters
+</li><li> A GStreamer video sink element that offers the GStreamer X 
+Overlay Interface. Note that if the XVideo extension is supported on the
+ X Server side, the xvimagesink element can be used as the video sink 
+element and no new elements are needed.
+</li></ul>
+</dd></dl>
+<p>Behind the GStreamer elements, the video imaging HW adaptation SW can
+ be implemented with different technologies and APIs, including V4L2 and
+ OpenMAX. In case OpenMAX components are used, the gst-omx package must 
+be used to offer those to the GStreamer framework.
+</p><p>If the device supports delivering video content to external 
+displays, the Resource Manager component may be used to coordinate the 
+video/display routing related behavior of the device.
+</p>
+<a name="Communications" id="Communications"></a><h3> <span class="mw-headline"> Communications </span></h3>
+<p>For an overview of the MeeGo communications services architecture, see <a href="http://meego.com/developers/meego-architecture/comms-services" class="external text" title="http://meego.com/developers/meego-architecture/comms-services" rel="nofollow">Comms Services</a>.
+</p>
+<a name="Cellular" id="Cellular"></a><h4> <span class="mw-headline"> Cellular </span></h4>
+<p>The cellular telephony architecture in MeeGo is centered on the 
+oFono, PulseAudio and Telepathy frameworks. In addition, the Resource 
+Manager plays a role in coordinating the device behavior during voice 
+calls.
+</p><p>The cellular modem HW adaptation SW must implement the following interfaces towards the MeeGo OS:
+</p>
+<dl><dd><ul><li> oFono modem plugin/driver API
+</li><li> Linux network interface for the Linux TCP/IP stack (for data communications)
+</li><li> Relevant PulseAudio plugin interfaces for cellular voice call audio handling
+</li></ul>
+</dd></dl>
+<p>For more detailed information about the oFono APIs, see the documentation and source code available at <a href="http://git.kernel.org/?p=network/ofono/ofono.git;a=summary" class="external text" title="http://git.kernel.org/?p=network/ofono/ofono.git;a=summary" rel="nofollow">oFono git</a>.
+</p>
+<a name="USB" id="USB"></a><h4> <span class="mw-headline"> USB </span></h4>
+<p>The foundation of the the MeeGo USB functionality is the standard 
+Linux USB subsystem. The Linux USB subsystem defines the USB related HW 
+adaptation interfaces that need to be supported in MeeGo. In practice, 
+these are kernel side interfaces between the generic USB functionality 
+and a HW dependent USB host controller driver.
+</p>
+<a name="WLAN" id="WLAN"></a><h4> <span class="mw-headline"> WLAN </span></h4>
+<p>The MeeGo WLAN architecture is centered on the <a href="http://linuxwireless.org/" class="external text" title="http://linuxwireless.org/" rel="nofollow">Linux wireless</a>
+ (IEEE-802.11) subsystem. The Linux wireless SW stack defines the WLAN 
+HW adaptation SW interfaces that need to be used in MeeGo. In practice, 
+the required interfaces are defined by cfg80211 for FullMAC WLAN devices
+ and by mac80211 for SoftMAC WLAN devices. In addition, a Linux network 
+interface needs to be supported towards the Linux TCP/IP stack.
+</p>
+<a name="Bluetooth" id="Bluetooth"></a><h4> <span class="mw-headline"> Bluetooth </span></h4>
+<p>The MeeGo Bluetooth architecture is centered on the <a href="http://www.bluez.org/" class="external text" title="http://www.bluez.org/" rel="nofollow">BlueZ</a>
+ SW stack. The BlueZ SW stack defines the Bluetooth HW adaptation SW 
+interfaces that need to be used in MeeGo. In practice, these are Linux 
+kernel side interfaces between the generic HCI (Host Controller 
+Interface) core and a HW specific HCI driver.
+</p>
+<a name="User.2Fenvironment_IO" id="User.2Fenvironment_IO"></a><h3> <span class="mw-headline"> User/environment IO </span></h3>
+<a name="Location" id="Location"></a><h4> <span class="mw-headline"> Location </span></h4>
+<p>The MeeGo location architecture is based on <a href="http://http//labs.trolltech.com/page/Projects/QtMobility%7C" class="external text" title="http://http://labs.trolltech.com/page/Projects/QtMobility|" rel="nofollow">QtMobility Location API</a>.
+  The QtMobility 1.0 Location API provides geographic coordinates only. 
+ The QtMobility 1.1 Location API provides geocoding and reverse 
+geocoding, POI search, navigation, and mapping.  The 1.0 Location API is
+ available in MeeGo 1.1.  The 1.1 or later Location API will be 
+available in MeeGo 1.2.  The Location API uses a plugin system for 
+implementations of the underlying backend.  MeeGo compliance 
+requirements require support for the QtMobility Location API and thus 
+require one or more plugins to support these APIs.  MeeGo places no 
+restrictions as to how the plugins are implemented, however. Adaptation 
+to location related HW may be done by manufacturers or service providers
+ and the way how it's done is not defined by the API.
+</p><p>MeeGo will use <a href="http://www.freedesktop.org/wiki/Software/GeoClue" class="external text" title="http://www.freedesktop.org/wiki/Software/GeoClue" rel="nofollow">GeoClue</a>
+ as the reference location framework and the reference implementation of
+ the Qt Mobility location API backend will be written on top of GeoClue.
+ GeoClue defines a set of (D-Bus) APIs for accessing location services 
+provided by service providers implemented as D-Bus services. In 
+addition, GeoClue includes a set of service provider implementations and
+ (at the time of this writing) an experimental master service provider 
+that can act as a proxy between clients and the actual service 
+providers. If a device vendor wants to take advantage of this existing 
+functionality, the vendor can implement their location services "behind"
+ the GeoClue APIs as GeoClue service providers. In such a case, 
+adaptation to the location related HW would happen inside the service 
+providers as defined by the service provider designs.
+</p>
+<a name="Sensors" id="Sensors"></a><h4> <span class="mw-headline"> Sensors </span></h4>
+<p>The key component in the MeeGo sensor handling architecture is the 
+Sensor Framework. The Sensor Framework uses both HW independent logical 
+sensor plugins and HW dependent sensor adaptor plugins in its operation.
+ The required sensor HW adaptation interfaces in MeeGo are the 
+interfaces that the Sensor Framework and the logical sensor plugins 
+define for the sensor adaptor plugins to implement. The sensor adaptor 
+plugins typically communicate directly with sensor HW drivers in the 
+Linux kernel. The interfaces that the sensor HW drivers expose to the 
+user space are not defined by MeeGo. Sensor HW adaptation in MeeGo thus 
+consists of adaptor plugins in the Sensor Framework and sensor HW 
+drivers in the Linux kernel.
+</p><p>Note that thermal sensors are handled in a different manner as described in the <a href="#Power_and_thermal_management" title=""><i>Power and thermal management</i></a> section above.
+</p>
+<a name="Touch" id="Touch"></a><h4> <span class="mw-headline"> Touch </span></h4>
+<p>The key SW components on the touch input handling path in MeeGo are 
+the touch HW device driver, Linux kernel input subsystem, X server, X 
+input driver, Qt and finally the MeeGo Touch Framework. Enabling touch 
+support for some new HW requires at least the implementation of the 
+corresponding touch HW device driver in the Linux kernel. If this driver
+ communicates touch events to the user space in a "standard" manner via 
+the Linux kernel input subsystem, basically the existing functionality 
+in X server (e.g. evdev input driver) and above can be used as such. In 
+case the kernel-to-user-space interface is non-standard, it is also 
+possible to implement a new X input driver as a part of the touch HW 
+adaptation.
+</p><p>At the time of this writing, official X server support for 
+multi-touch is only on its way to implementations. Multi-touch support 
+in X requires a new version, 2.1, of the <a href="http://cgit.freedesktop.org/%7Ewhot/inputproto/tree/XI2proto.txt?h=multitouch" class="external text" title="http://cgit.freedesktop.org/~whot/inputproto/tree/XI2proto.txt?h=multitouch" rel="nofollow">X Input Extension</a>
+ and this means also changes to the client side, in this case Qt's 
+multi-touch support. Once this support has been implemented throughout 
+the SW stack, including X evdev input driver, supporting multi-touch for
+ some new HW should require only the implementation of the corresponding
+ touch HW device driver in the Linux kernel. Meanwhile, multi-touch 
+support in MeeGo uses a special X input driver (mtev), X server 
+multi-pointer support (MPX) and Qt multi-touch support written on top of
+ MPX. Thus, at this point, the user-space interface exposed by the touch
+ HW device driver needs to be compatible with mtev.
+</p>
+<a name="HW_keyboard" id="HW_keyboard"></a><h4> <span class="mw-headline"> HW keyboard </span></h4>
+<p>The key SW components on the HW keyboard input handling path in MeeGo
+ are the keyboard HW device driver, Linux kernel input subsystem, X 
+server, X input driver and Qt. Enabling keyboard support for some new HW
+ requires typically only the implementation of the corresponding 
+keyboard HW device driver in the Linux kernel. If this driver 
+communicates key events to the user space in a "standard" manner via the
+ Linux kernel input subsystem, the existing functionality in X server 
+(e.g. evdev input driver) and above should work as such. In case the 
+kernel-to-user space interface is non-standard, it is also possible to 
+implement a new X input driver as a part of the keyboard HW adaptation.
+</p>
+<a name="Haptics" id="Haptics"></a><h4> <span class="mw-headline"> Haptics </span></h4>
+<p>The MeeGo Touch Framework present (at least) in the MeeGo handset 
+device category contains a component called Feedback Framework 
+(meegotouch-feedback) that handles the creation of auditory and/or 
+haptic feedback to touch events. The haptic feedback can be created e.g.
+ with vibra motors or piezo elements. In the Feedback Framework, the 
+different types of feedback are created by backend libraries implemented
+ as plugins. 
+</p><p>The haptics related HW adaptation interface from MeeGo OS 
+perspective is the backend plugin interface defined by the Feedback 
+Framework. The plugins can then communicate with the HW either through 
+some device driver interface or some intermediate SW layers (MeeGo 
+places no restrictions as to how the plugins are implemented).
+</p>
+<a name="Vibra_.28notifications.2Falerts.29" id="Vibra_.28notifications.2Falerts.29"></a><h4> <span class="mw-headline"> Vibra (notifications/alerts) </span></h4>
+<p>At the time of this writing, MeeGo does not yet define a HW 
+adaptation interface for notification/alert type vibra playback. Such a 
+definition is likely, however, as e.g. the MeeGo Touch Framework has the
+ capability of playing back vibra as a part of notification handling. 
+</p><p>See the previous section for information about how vibra HW adaptation is handled for haptic feedback.
+</p>
+<a name="Miscellaneous_.28LEDs.2C_keys.2C_switches_etc..29" id="Miscellaneous_.28LEDs.2C_keys.2C_switches_etc..29"></a><h4> <span class="mw-headline"> Miscellaneous (LEDs, keys, switches etc.) </span></h4>
+<p>At the time of this writing, MeeGo does not define HW adaptation interfaces for things like:
+</p>
+<ul><li> Controlling LEDs
+</li><li> Handling the various keys and switches in the device (e.g. power key, volume key, camera button, slider switch)
+</li><li> Touch screen or HW keyboard enabling/disabling depending on device state
+</li><li> Keyboard backlight control
+</li><li> Display state (on/off) and brightness control
+</li></ul>
+<p>Thus, for now, these issues can be handled in a vendor specific manner.
+</p>
+<a name="Flashing.2C_testing.2C_tuning.2C_certification" id="Flashing.2C_testing.2C_tuning.2C_certification"></a><h3> <span class="mw-headline"> Flashing, testing, tuning, certification </span></h3>
+<p>The current understanding is that flashing, self-testing, functional 
+testing, tuning and certification related issues are handled in a vendor
+ specific manner.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 43/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key meego_wiki:pcache:idhash:201-0!1!0!!en!2!edit=0 and timestamp 20101109082510 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wiki.meego.com/MeeGo_Porting_Guide">http://wiki.meego.com/MeeGo_Porting_Guide</a>"</div>
+		<div class="mw_clear"></div>
+					</div><!-- mw_contentholder -->
+	</div><!-- mw_content -->
+	</div><!-- mw_contentwrapper -->
+
+	<div id="mw_portlets">
+
+	<!-- portlets -->
+			<div class="generated-sidebar portlet" id="p-Wiki_Navigation">
+		<h5>Wiki Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-Return-to-MeeGo.com"><a href="http://meego.com/">Return to MeeGo.com</a></li>
+				<li id="n-mainpage-description"><a href="http://wiki.meego.com/Main_Page">Main page</a></li>
+				<li id="n-recentchanges"><a href="http://wiki.meego.com/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://wiki.meego.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://wiki.meego.com/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- search -->
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform"><div>
+				<input name="title" value="Special:Search" type="hidden">
+
+				<input autocomplete="off" id="searchInput" name="search" title="Search MeeGo wiki [alt-shift-f]" accesskey="f" type="text">
+
+									<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" type="submit">&nbsp;
+								<input name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists" type="submit">
+			</div></form>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- toolbox -->
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://wiki.meego.com/Special:WhatLinksHere/MeeGo_Porting_Guide" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://wiki.meego.com/Special:RecentChangesLinked/MeeGo_Porting_Guide" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="http://wiki.meego.com/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://wiki.meego.com/index.php?title=MeeGo_Porting_Guide&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://wiki.meego.com/index.php?title=MeeGo_Porting_Guide&amp;oldid=17075" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- languages -->
+
+	</div><!-- mw_portlets -->
+
+
+	</div><!-- main -->
+
+	<div class="mw_clear"></div>
+
+	<!-- personal portlet -->
+	<div id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://meego.com/user?destination=wiki_home" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<!-- footer --> 
+	<div id="footer">
+  		<a href="http://linuxfoundation.org/"><div id="sponsor"><strong>Linux Foundation</strong></div></a>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified on 26 October 2010, at 04:50.</li>
+				<li id="viewcount">This page has been accessed 7,290 times.</li>
+			</ul>
+ 			<ul id="f-list">
+				<li id="copyright">Content is available under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" class="external " title="http://creativecommons.org/licenses/by/3.0/legalcode">Creative Commons Attribution 3.0 License</a>.</li>
+				<li id="privacy"><a href="http://wiki.meego.com/MeeGo_wiki:Privacy_policy" title="MeeGo wiki:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a href="http://wiki.meego.com/MeeGo_wiki:About" title="MeeGo wiki:About">About MeeGo wiki</a></li>
+			</ul>     
+		<div class="mw_poweredby">Powered by MediaWiki 1.15.5</div>	</div>
+
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.146 secs. --><div style="position: absolute; display: none; z-index: 9999;" id="livemargins_control"><img src="MeeGo_Porting_Guide_files/monitor-background-horizontal.png" style="position: absolute; left: -77px; top: -5px;" width="77" height="5">	<img src="MeeGo_Porting_Guide_files/monitor-background-vertical.png" style="position: absolute; left: 0pt; top: -5px;">	<img id="monitor-play-button" src="MeeGo_Porting_Guide_files/monitor-play-button.png" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5" style="position: absolute; left: 1px; top: 0pt; opacity: 0.5; cursor: pointer;"></div></body></html>

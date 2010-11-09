@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<meta name="generator" content="MediaWiki 1.15.5">
+		<meta name="keywords" content="SDK/Docs/1.1/Creating Hello World,SDK/Docs/1.1/Configuring QEMU runtimes,SDK/Docs/1.1/Debugging with Qt Creator,SDK/Docs/1.1/Getting started with the MeeGo SDK for Linux,SDK/Docs/1.1/Setting up N900 device,SDK/Docs/1.1/Setting up Netbook">
+		<link rel="shortcut icon" href="http://wiki.meego.com/skins/meego/favicon.ico">
+		<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.meego.com/opensearch_desc.php" title="MeeGo wiki (en)">
+		<link title="Creative Commons" type="application/rdf+xml" href="http://wiki.meego.com/index.php?title=SDK/Docs/1.1/Creating_Hello_World&amp;action=creativecommons" rel="meta">
+		<link rel="copyright" href="http://creativecommons.org/licenses/by/3.0/legalcode">
+		<link rel="alternate" type="application/rss+xml" title="MeeGo wiki RSS feed" href="http://wiki.meego.com/index.php?title=Special:RecentChanges&amp;feed=rss">
+		<link rel="alternate" type="application/atom+xml" title="MeeGo wiki Atom feed" href="http://wiki.meego.com/index.php?title=Special:RecentChanges&amp;feed=atom">
+		<title>SDK/Docs/1.1/Creating Hello World - MeeGo wiki</title>
+		<link rel="stylesheet" href="Creating_Hello_World_files/shared.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="Creating_Hello_World_files/main.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="Creating_Hello_World_files/print.css" type="text/css" media="print">
+		<link rel="stylesheet" href="Creating_Hello_World_files/index_002.css" type="text/css">
+		<link rel="stylesheet" href="Creating_Hello_World_files/index_004.css" type="text/css" media="print">
+		<link rel="stylesheet" href="Creating_Hello_World_files/index_003.css" type="text/css">
+		<link rel="stylesheet" href="Creating_Hello_World_files/index.css" type="text/css">		<!--[if lt IE 7]><meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type="text/javascript">/*<![CDATA[*/
+		var skin = "meego";
+		var stylepath = "/skins";
+		var wgArticlePath = "/$1";
+		var wgScriptPath = "";
+		var wgScript = "/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wiki.meego.com";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "SDK/Docs/1.1/Creating_Hello_World";
+		var wgTitle = "SDK/Docs/1.1/Creating Hello World";
+		var wgAction = "view";
+		var wgArticleId = "2377";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 19523;
+		var wgVersion = "1.15.5";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgMWSuggestTemplate = "http://wiki.meego.com/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest";
+		var wgDBname = "meego_wiki";
+		var wgSearchNamespaces = [0];
+		var wgMWSuggestMessages = ["with suggestions", "no suggestions"];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+                
+		<script type="text/javascript" src="Creating_Hello_World_files/wikibits.js"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="Creating_Hello_World_files/ajax.js"></script>
+		<script type="text/javascript" src="Creating_Hello_World_files/mwsuggest.js"></script>
+		<script type="text/javascript" src="Creating_Hello_World_files/index.php"><!-- site js --></script>
+	</head><body class="mediawiki ltr ns-0 ns-subject page-SDK_Docs_1_1_Creating_Hello_World skin-meego">
+
+	<!-- heading -->
+	<div id="mw_header"><div id="firstHeading"><a href="http://wiki.meego.com/Main_Page"><strong>Meego Wiki</strong></a></div></div>
+
+	<div id="mw_main">
+	<div id="mw_contentwrapper">
+	<!-- navigation portlet -->
+	<div id="p-cactions">
+		<h5>Views</h5>
+		<div class="pBody">
+    	<h1 id="PageTitle">SDK/Docs/1.1/Creating Hello World</h1>
+			<ul>
+      		
+	
+				 <li id="ca-nstab-main" class="selected"><a href="http://wiki.meego.com/SDK/Docs/1.1/Creating_Hello_World" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="http://wiki.meego.com/index.php?title=Talk:SDK/Docs/1.1/Creating_Hello_World&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="http://wiki.meego.com/index.php?title=SDK/Docs/1.1/Creating_Hello_World&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="http://wiki.meego.com/index.php?title=SDK/Docs/1.1/Creating_Hello_World&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+
+	<!-- content -->
+	<div id="mw_content">
+	<!-- contentholder does nothing by default, but it allows users to style the text inside
+	     the content area without affecting the meaning of 'em' in #mw_content, which is used
+	     for the margins -->
+	<div id="mw_contentholder">
+		<div class="mw-topboxes">
+			<div id="mw-js-message" style="display: none;"></div>
+			<div class="mw-topbox" id="siteSub">From MeeGo wiki</div>
+								</div>
+
+		<div id="contentSub"><span class="subpages">&lt; <a href="http://wiki.meego.com/SDK" title="SDK">SDK</a> | <a href="http://wiki.meego.com/SDK/Docs/1.1" title="SDK/Docs/1.1">Docs/1.1</a></span></div>
+
+				<div id="jump-to-nav">Jump to: <a href="#mw_portlets">navigation</a>, <a href="#searchInput">search</a></div>
+		<p><br>
+<b>Note:</b> This page is work-in-progress (26 Oct 2010).
+</p><p>This page explains how to create a Hello World application with Qt Creator and run it on a MeeGo device (real or emulated).
+</p>
+<table id="toc" class="toc" summary="Contents"><tbody><tr><td><div id="toctitle"><h2>Contents</h2> <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1"><a href="#Prerequisites"><span class="tocnumber">1</span> <span class="toctext">Prerequisites</span></a></li>
+<li class="toclevel-1"><a href="#Creating_a_Hello_World"><span class="tocnumber">2</span> <span class="toctext">Creating a Hello World</span></a></li>
+<li class="toclevel-1"><a href="#Packaging_the_Hello_World"><span class="tocnumber">3</span> <span class="toctext">Packaging the Hello World</span></a></li>
+<li class="toclevel-1"><a href="#Configuring_device_access_in_Qt_Creator"><span class="tocnumber">4</span> <span class="toctext">Configuring device access in Qt Creator</span></a></li>
+<li class="toclevel-1"><a href="#Running_the_Hello_World"><span class="tocnumber">5</span> <span class="toctext">Running the Hello World</span></a></li>
+<li class="toclevel-1"><a href="#Debugging_the_Hello_World"><span class="tocnumber">6</span> <span class="toctext">Debugging the Hello World</span></a></li>
+</ul>
+</td></tr></tbody></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Prerequisites" id="Prerequisites"></a><h2> <span class="mw-headline"> Prerequisites </span></h2>
+<ul><li> You have <a href="http://wiki.meego.com/SDK/Docs/1.1/Getting_started_with_the_MeeGo_SDK_for_Linux" title="SDK/Docs/1.1/Getting started with the MeeGo SDK for Linux">set up MeeGo SDK environment on Linux</a>
+</li><li> You have installed the MeeGo image and configured the device access in Qt Creator.
+</li></ul>
+<a name="Creating_a_Hello_World" id="Creating_a_Hello_World"></a><h2> <span class="mw-headline"> Creating a Hello World </span></h2>
+<p><b>To create a project:</b>
+</p>
+<ol><li> In Qt Creator, select <b>File</b> &gt; <b>New File or Project</b>. 
+</li><li> Select <b>Mobile Qt Application</b> and click <b>Choose...</b>.
+<dl><dd> <div class="thumb tnone"><div class="thumbinner" style="width: 556px;"><a href="http://wiki.meego.com/File:Qt_Creator_creating_a_new_project_mobility.png" class="image" title="Creating your project"><img alt="" src="Creating_Hello_World_files/Qt_Creator_creating_a_new_project_mobility.png" class="thumbimage" border="0" width="554" height="456"></a>  <div class="thumbcaption">Creating your project</div></div></div>
+</dd></dl>
+</li><li> Name your project, select where you want to save it, and click <b>Next</b>.
+<dl><dd> <b>Note:</b> Make sure that the path to the location does not contain spaces.
+</dd><dd> <div class="thumb tnone"><div class="thumbinner" style="width: 612px;"><a href="http://wiki.meego.com/File:Qt_Creator_naming_mobility_project.png" class="image" title="Naming your project"><img alt="" src="Creating_Hello_World_files/Qt_Creator_naming_mobility_project.png" class="thumbimage" border="0" width="610" height="360"></a>  <div class="thumbcaption">Naming your project</div></div></div>
+</dd></dl>
+</li><li> Select MeeGo target(s) and click <b>Next</b>.
+<dl><dd> <div class="thumb tnone"><div class="thumbinner" style="width: 612px;"><a href="http://wiki.meego.com/File:Qt_Creator_selecting_targets_mobility.png" class="image" title="Selecting the MeeGo target(s)"><img alt="" src="Creating_Hello_World_files/Qt_Creator_selecting_targets_mobility.png" class="thumbimage" border="0" width="610" height="360"></a>  <div class="thumbcaption">Selecting the MeeGo target(s)</div></div></div>
+</dd></dl>
+</li><li> Name the files that will be automatically created for your project.
+<dl><dd> <div class="thumb tnone"><div class="thumbinner" style="width: 612px;"><a href="http://wiki.meego.com/File:Qt_Creator_naming_classes_mobility.png" class="image" title="Naming classes for your project"><img alt="" src="Creating_Hello_World_files/Qt_Creator_naming_classes_mobility.png" class="thumbimage" border="0" width="610" height="411"></a>  <div class="thumbcaption">Naming classes for your project</div></div></div>
+</dd></dl>
+</li><li> If you want to add the project to version control, do so. Otherwise click <b>Finish</b>.
+<dl><dd> <div class="thumb tnone"><div class="thumbinner" style="width: 612px;"><a href="http://wiki.meego.com/File:Qt_Creator_adding_mobility_project_to_version_control.png" class="image" title="Adding your project to version control"><img alt="" src="Creating_Hello_World_files/Qt_Creator_adding_mobility_project_to_version_control.png" class="thumbimage" border="0" width="610" height="411"></a>  <div class="thumbcaption">Adding your project to version control</div></div></div>
+</dd></dl>
+</li></ol>
+<dl><dd>Your project has now been created.
+</dd></dl>
+<p><b>To create a Hello World application:</b>
+</p><p>For more information on the Hello World created here, see <a href="http://apidocs.meego.com/1.0/qtmobility/quickstart.html" class="external text" title="http://apidocs.meego.com/1.0/qtmobility/quickstart.html" rel="nofollow">the Qt Mobility Quickstart Example</a>.
+</p><p>1. In Qt Creator, select <b>Edit</b> mode.
+</p><p>2. To view your project files, open <b>Forms</b>, <b>Headers</b>, and <b>Sources</b> folders in <b>Projects</b> sidebar.
+</p><p>3. To create an application that uses the QSystemInfo headers to 
+print out the system's current country code, replace the existing 
+example code in your <code>main.cpp</code> file with the following example code:
+</p>
+<pre>#include &lt;QApplication&gt;
+#include &lt;QLabel&gt;
+#include &lt;QSystemInfo&gt;
+using namespace QtMobility;
+
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+    QSystemInfo s;
+    QLabel *label = new QLabel(QObject::tr("hello ").append(s.currentCountryCode()));
+    label-&gt;show();
+    label-&gt;resize(100,30);
+    return app.exec();
+}
+</pre>
+<p>4. Replace the corresponding lines in your <code>.pro</code> file with the following System Information API declaration:
+</p>
+<pre>CONFIG += mobility
+MOBILITY += systeminfo
+</pre>
+<p>Do not remove the existing code in the file.
+</p><p>5. In the <b>File</b> menu, select <b>Save All</b>.
+</p><p>Your application is now ready to be configured for building.
+</p><p><b>To configure your Hello World for building:</b>
+</p>
+<ol><li> Switch to <b>Projects</b> mode <a href="http://wiki.meego.com/File:Qt_Creator_Projects_mode_button.png" class="image" title="File:Qt Creator Projects mode button.png"><img alt="File:Qt Creator Projects mode button.png" src="Creating_Hello_World_files/Qt_Creator_Projects_mode_button.png" border="0" width="62" height="53"></a>.
+</li><li> On the target toolbar, select <b>MeeGo</b> &gt; <b>Build</b> to configure Build settings.
+</li><li> On <b>Edit build configuration:</b> line, select <b>Add</b> &gt; <b>Using Qt version "MeeGo sysroot"</b>.
+</li><li> Change <b>Debug</b> into <b>MeeGo sysroot Release</b>.
+<dl><dd> <div class="thumb tnone"><div class="thumbinner" style="width: 1026px;"><a href="http://wiki.meego.com/File:Qt_Creator_build_settings_mobility.png" class="image" title="Configuring build settings in Qt Creator"><img alt="" src="Creating_Hello_World_files/Qt_Creator_build_settings_mobility.png" class="thumbimage" border="0" width="1024" height="871"></a>  <div class="thumbcaption">Configuring build settings in Qt Creator</div></div></div>
+</dd><dd> Your Hello World is now ready to be configured for running in QEMU or your device.
+</dd></dl>
+</li></ol>
+<a name="Packaging_the_Hello_World" id="Packaging_the_Hello_World"></a><h2> <span class="mw-headline"> Packaging the Hello World </span></h2>
+<p>If you <a href="#Running_the_Hello_World" title="">run</a> your Hello World application, an .rpm package is created automatically.
+</p><p>If you want to create a package of your Hello World application without running it, click <b>Build All</b> or select <b>Build</b> &gt; <b>Build Project "&lt;project name&gt;"</b>.
+</p><p><b>Compile Output</b> view shows the message "Package created." 
+and an .rpm package file (&lt;project name&gt;-&lt;project 
+version&gt;-&lt;release version&gt;.&lt;device architecture&gt;.rpm) has
+ been created in the build-specific project subdirectory ("&lt;project 
+name&gt;-build-meego").
+</p>
+<a name="Configuring_device_access_in_Qt_Creator" id="Configuring_device_access_in_Qt_Creator"></a><h2> <span class="mw-headline"> Configuring device access in Qt Creator </span></h2>
+<p>Configuring device access in Qt Creator is slightly different 
+depending on whether you are deploying to a real device or an emulated 
+one.
+</p><p>However, the mode of access is the same: Qt Creator deploys and installs an .rpm package on the device, and runs the executable.
+</p><p>For instructions on configuring device access, see:
+</p>
+<ul><li> <a href="http://wiki.meego.com/SDK/Docs/1.1/Setting_up_N900_device#Configuring_device_access_in_Qt_Creator" title="SDK/Docs/1.1/Setting up N900 device">N900</a>
+</li><li> <a href="http://wiki.meego.com/SDK/Docs/1.1/Setting_up_Netbook#Configuring_device_access_in_Qt_Creator" title="SDK/Docs/1.1/Setting up Netbook">Netbook</a>
+</li><li> <a href="http://wiki.meego.com/SDK/Docs/1.1/Configuring_QEMU_runtimes#Configuring_access_to_an_emulated_device_in_Qt_Creator" title="SDK/Docs/1.1/Configuring QEMU runtimes">QEMU image</a>
+</li></ul>
+<a name="Running_the_Hello_World" id="Running_the_Hello_World"></a><h2> <span class="mw-headline"> Running the Hello World </span></h2>
+<p>To run your Hello World on your device:
+</p>
+<ol><li> Switch to <b>Projects</b> mode <a href="http://wiki.meego.com/File:Qt_Creator_Projects_mode_button.png" class="image" title="File:Qt Creator Projects mode button.png"><img alt="File:Qt Creator Projects mode button.png" src="Creating_Hello_World_files/Qt_Creator_Projects_mode_button.png" border="0" width="62" height="53"></a>.
+</li><li> On the target toolbar, select <b>MeeGo</b> &gt; <b>Run</b> to configure Run settings.
+</li><li> In <b>Device configuration</b> drop-down menu, select the device configuration you created when <a href="#Configuring_device_access_in_Qt_Creator" title="">configuring device access</a>.
+<dl><dd> <a href="http://wiki.meego.com/File:Qt_Creator_run_settings_mobility.png" class="image" title="Qt Creator run settings mobility.png"><img alt="" src="Creating_Hello_World_files/800px-Qt_Creator_run_settings_mobility.png" border="0" width="800" height="680"></a>
+</dd></dl>
+</li><li> Click <a href="http://wiki.meego.com/File:Qt_Creator_Run_button.png" class="image" title="Qt Creator Run button.png"><img alt="Run" src="Creating_Hello_World_files/Qt_Creator_Run_button.png" border="0" width="59" height="43"></a>.
+<dl><dd> Your Hello World runs on your device.
+</dd></dl>
+</li></ol>
+<p>On a netbook image, the Hello World application runs as shown in the following screenshot:
+</p><p><a href="http://wiki.meego.com/File:Sdk-docs-helloworld-on-netbook.png" class="image" title="Sdk-docs-helloworld-on-netbook.png"><img alt="" src="Creating_Hello_World_files/800px-Sdk-docs-helloworld-on-netbook.png" border="0" width="800" height="469"></a>
+</p>
+<a name="Debugging_the_Hello_World" id="Debugging_the_Hello_World"></a><h2> <span class="mw-headline"> Debugging the Hello World </span></h2>
+<p>For more information on debugging, see <a href="http://wiki.meego.com/SDK/Docs/1.1/Debugging_with_Qt_Creator" title="SDK/Docs/1.1/Debugging with Qt Creator">Debugging with Qt Creator</a>.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 13/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key meego_wiki:pcache:idhash:2377-0!1!0!!en!2!edit=0 and timestamp 20101109083228 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wiki.meego.com/SDK/Docs/1.1/Creating_Hello_World">http://wiki.meego.com/SDK/Docs/1.1/Creating_Hello_World</a>"</div>
+		<div class="mw_clear"></div>
+		<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://wiki.meego.com/Special:Categories" title="Special:Categories">Category</a>: <span dir="ltr"><a href="http://wiki.meego.com/index.php?title=Category:Meego-1.1&amp;action=edit&amp;redlink=1" class="new" title="Category:Meego-1.1 (page does not exist)">Meego-1.1</a></span></div></div>			</div><!-- mw_contentholder -->
+	</div><!-- mw_content -->
+	</div><!-- mw_contentwrapper -->
+
+	<div id="mw_portlets">
+
+	<!-- portlets -->
+			<div class="generated-sidebar portlet" id="p-Wiki_Navigation">
+		<h5>Wiki Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-Return-to-MeeGo.com"><a href="http://meego.com/">Return to MeeGo.com</a></li>
+				<li id="n-mainpage-description"><a href="http://wiki.meego.com/Main_Page">Main page</a></li>
+				<li id="n-recentchanges"><a href="http://wiki.meego.com/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://wiki.meego.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://wiki.meego.com/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- search -->
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform"><div>
+				<input name="title" value="Special:Search" type="hidden">
+
+				<input autocomplete="off" id="searchInput" name="search" title="Search MeeGo wiki [alt-shift-f]" accesskey="f" type="text">
+
+									<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" type="submit">&nbsp;
+								<input name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists" type="submit">
+			</div></form>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- toolbox -->
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://wiki.meego.com/Special:WhatLinksHere/SDK/Docs/1.1/Creating_Hello_World" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://wiki.meego.com/Special:RecentChangesLinked/SDK/Docs/1.1/Creating_Hello_World" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="http://wiki.meego.com/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://wiki.meego.com/index.php?title=SDK/Docs/1.1/Creating_Hello_World&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://wiki.meego.com/index.php?title=SDK/Docs/1.1/Creating_Hello_World&amp;oldid=19523" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- languages -->
+
+	</div><!-- mw_portlets -->
+
+
+	</div><!-- main -->
+
+	<div class="mw_clear"></div>
+
+	<!-- personal portlet -->
+	<div id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://meego.com/user?destination=wiki_home" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<!-- footer --> 
+	<div id="footer">
+  		<a href="http://linuxfoundation.org/"><div id="sponsor"><strong>Linux Foundation</strong></div></a>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified on 8 November 2010, at 08:23.</li>
+				<li id="viewcount">This page has been accessed 1,325 times.</li>
+			</ul>
+ 			<ul id="f-list">
+				<li id="copyright">Content is available under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" class="external " title="http://creativecommons.org/licenses/by/3.0/legalcode">Creative Commons Attribution 3.0 License</a>.</li>
+				<li id="privacy"><a href="http://wiki.meego.com/MeeGo_wiki:Privacy_policy" title="MeeGo wiki:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a href="http://wiki.meego.com/MeeGo_wiki:About" title="MeeGo wiki:About">About MeeGo wiki</a></li>
+			</ul>     
+		<div class="mw_poweredby">Powered by MediaWiki 1.15.5</div>	</div>
+
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.269 secs. --><div style="position: absolute; display: none; z-index: 9999;" id="livemargins_control"><img src="Creating_Hello_World_files/monitor-background-horizontal.png" style="position: absolute; left: -77px; top: -5px;" width="77" height="5">	<img src="Creating_Hello_World_files/monitor-background-vertical.png" style="position: absolute; left: 0pt; top: -5px;">	<img id="monitor-play-button" src="Creating_Hello_World_files/monitor-play-button.png" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5" style="position: absolute; left: 1px; top: 0pt; opacity: 0.5; cursor: pointer;"></div></body></html>
