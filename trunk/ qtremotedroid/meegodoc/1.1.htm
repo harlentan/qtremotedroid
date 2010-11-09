@@ -1,0 +1,271 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<meta name="generator" content="MediaWiki 1.15.5">
+		<meta name="keywords" content="SDK/Docs/1.1,SDK/Docs/1.1/Building a MeeGo chroot on Linux,SDK/Docs/1.1/Configuring QEMU runtimes,SDK/Docs/1.1/Creating Hello World,SDK/Docs/1.1/Debugging with Qt Creator,SDK/Docs/1.1/Developing for MeeGo,SDK/Docs/1.1/Getting started with the MeeGo SDK for Linux,SDK/Docs/1.1/MeeGo SDK Graphics Acceleration,SDK/Docs/1.1/MeeGo SDK with Qt,SDK/Docs/1.1/MeeGo SDK with Xephyr,SDK/Docs/1.1/MeeGo developer story">
+		<link rel="shortcut icon" href="http://wiki.meego.com/skins/meego/favicon.ico">
+		<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.meego.com/opensearch_desc.php" title="MeeGo wiki (en)">
+		<link title="Creative Commons" type="application/rdf+xml" href="http://wiki.meego.com/index.php?title=SDK/Docs/1.1&amp;action=creativecommons" rel="meta">
+		<link rel="copyright" href="http://creativecommons.org/licenses/by/3.0/legalcode">
+		<link rel="alternate" type="application/rss+xml" title="MeeGo wiki RSS feed" href="http://wiki.meego.com/index.php?title=Special:RecentChanges&amp;feed=rss">
+		<link rel="alternate" type="application/atom+xml" title="MeeGo wiki Atom feed" href="http://wiki.meego.com/index.php?title=Special:RecentChanges&amp;feed=atom">
+		<title>SDK/Docs/1.1 - MeeGo wiki</title>
+		<link rel="stylesheet" href="1.1_files/shared.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="1.1_files/main.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="1.1_files/print.css" type="text/css" media="print">
+		<link rel="stylesheet" href="1.1_files/index_002.css" type="text/css">
+		<link rel="stylesheet" href="1.1_files/index_003.css" type="text/css" media="print">
+		<link rel="stylesheet" href="1.1_files/index_004.css" type="text/css">
+		<link rel="stylesheet" href="1.1_files/index.css" type="text/css">		<!--[if lt IE 7]><meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type="text/javascript">/*<![CDATA[*/
+		var skin = "meego";
+		var stylepath = "/skins";
+		var wgArticlePath = "/$1";
+		var wgScriptPath = "";
+		var wgScript = "/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wiki.meego.com";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "SDK/Docs/1.1";
+		var wgTitle = "SDK/Docs/1.1";
+		var wgAction = "view";
+		var wgArticleId = "2177";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 19632;
+		var wgVersion = "1.15.5";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgMWSuggestTemplate = "http://wiki.meego.com/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest";
+		var wgDBname = "meego_wiki";
+		var wgSearchNamespaces = [0];
+		var wgMWSuggestMessages = ["with suggestions", "no suggestions"];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+                
+		<script type="text/javascript" src="1.1_files/wikibits.js"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="1.1_files/ajax.js"></script>
+		<script type="text/javascript" src="1.1_files/mwsuggest.js"></script>
+		<script type="text/javascript" src="1.1_files/index.php"><!-- site js --></script>
+	</head><body class="mediawiki ltr ns-0 ns-subject page-SDK_Docs_1_1 skin-meego">
+
+	<!-- heading -->
+	<div id="mw_header"><div id="firstHeading"><a href="http://wiki.meego.com/Main_Page"><strong>Meego Wiki</strong></a></div></div>
+
+	<div id="mw_main">
+	<div id="mw_contentwrapper">
+	<!-- navigation portlet -->
+	<div id="p-cactions">
+		<h5>Views</h5>
+		<div class="pBody">
+    	<h1 id="PageTitle">SDK/Docs/1.1</h1>
+			<ul>
+      		
+	
+				 <li id="ca-nstab-main" class="selected"><a href="http://wiki.meego.com/SDK/Docs/1.1" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="http://wiki.meego.com/index.php?title=Talk:SDK/Docs/1.1&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="http://wiki.meego.com/index.php?title=SDK/Docs/1.1&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="http://wiki.meego.com/index.php?title=SDK/Docs/1.1&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+
+	<!-- content -->
+	<div id="mw_content">
+	<!-- contentholder does nothing by default, but it allows users to style the text inside
+	     the content area without affecting the meaning of 'em' in #mw_content, which is used
+	     for the margins -->
+	<div id="mw_contentholder">
+		<div class="mw-topboxes">
+			<div id="mw-js-message" style="display: none;"></div>
+			<div class="mw-topbox" id="siteSub">From MeeGo wiki</div>
+								</div>
+
+		<div id="contentSub"><span class="subpages">&lt; <a href="http://wiki.meego.com/SDK" title="SDK">SDK</a></span></div>
+
+				<div id="jump-to-nav">Jump to: <a href="#mw_portlets">navigation</a>, <a href="#searchInput">search</a></div>
+		<table id="toc" class="toc" summary="Contents"><tbody><tr><td><div id="toctitle"><h2>Contents</h2> <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1"><a href="#MeeGo_1.1_Developer_Documentation_--_Table_of_Contents"><span class="tocnumber">1</span> <span class="toctext">MeeGo 1.1 Developer Documentation -- Table of Contents</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Introduction_to_MeeGo_1.1"><span class="tocnumber">1.1</span> <span class="toctext">Introduction to MeeGo 1.1</span></a></li>
+<li class="toclevel-2"><a href="#Architecture"><span class="tocnumber">1.2</span> <span class="toctext">Architecture</span></a></li>
+<li class="toclevel-2"><a href="#API_references"><span class="tocnumber">1.3</span> <span class="toctext">API references</span></a></li>
+<li class="toclevel-2"><a href="#UI_guidelines"><span class="tocnumber">1.4</span> <span class="toctext">UI guidelines</span></a></li>
+<li class="toclevel-2"><a href="#Setting_up_your_development_environment"><span class="tocnumber">1.5</span> <span class="toctext">Setting up your development environment</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Linux"><span class="tocnumber">1.5.1</span> <span class="toctext">Linux</span></a></li>
+<li class="toclevel-3"><a href="#Setting_up_your_device"><span class="tocnumber">1.5.2</span> <span class="toctext">Setting up your device</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Developing_native_applications"><span class="tocnumber">1.6</span> <span class="toctext">Developing native applications</span></a></li>
+<li class="toclevel-2"><a href="#Developing_Web_Runtime_applications"><span class="tocnumber">1.7</span> <span class="toctext">Developing Web Runtime applications</span></a></li>
+<li class="toclevel-2"><a href="#Alternative_development_approaches"><span class="tocnumber">1.8</span> <span class="toctext">Alternative development approaches</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></tbody></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="MeeGo_1.1_Developer_Documentation_--_Table_of_Contents" id="MeeGo_1.1_Developer_Documentation_--_Table_of_Contents"></a><h1> <span class="mw-headline"> MeeGo 1.1 Developer Documentation -- Table of Contents </span></h1>
+<p>MeeGo 1.1 developer documentation includes the following sections.
+</p>
+<a name="Introduction_to_MeeGo_1.1" id="Introduction_to_MeeGo_1.1"></a><h2> <span class="mw-headline"> Introduction to MeeGo 1.1</span></h2>
+<p><a href="http://wiki.meego.com/SDK/Docs/1.1/Release_notes" title="SDK/Docs/1.1/Release notes"> MeeGo 1.1 SDK release notes</a> //to be updated// <br>
+<a href="http://wiki.meego.com/SDK/Docs/1.1/MeeGo_overview" title="SDK/Docs/1.1/MeeGo overview"> MeeGo application development overview</a> <br>
+<a href="http://wiki.meego.com/SDK/Docs/1.1/MeeGo_developer_story" title="SDK/Docs/1.1/MeeGo developer story"> MeeGo developer story</a> <br>
+<a href="http://wiki.meego.com/SDK/Docs/1.1/Terminology" title="SDK/Docs/1.1/Terminology">MeeGo SDK terminology</a>
+</p>
+<a name="Architecture" id="Architecture"></a><h2> <span class="mw-headline"> Architecture </span></h2>
+<p><a href="http://meego.com/developers/meego-architecture" class="external text" title="http://meego.com/developers/meego-architecture" rel="nofollow">MeeGo architecture overview</a> <br>
+<a href="http://meego.com/developers/meego-architecture/meego-architecture-layer-view" class="external text" title="http://meego.com/developers/meego-architecture/meego-architecture-layer-view" rel="nofollow">MeeGo architecture layer view</a><br>
+<a href="http://meego.com/developers/meego-architecture/meego-architecture-domain-view" class="external text" title="http://meego.com/developers/meego-architecture/meego-architecture-domain-view" rel="nofollow">MeeGo architecture domain view</a><br>
+<a href="http://meego.com/developers/meego-architecture/meego-architecture-api-view" class="external text" title="http://meego.com/developers/meego-architecture/meego-architecture-api-view" rel="nofollow">MeeGo architecture API view</a><br>
+</p>
+<a name="API_references" id="API_references"></a><h2> <span class="mw-headline">API references</span></h2>
+<p>MeeGo 1.1 release provides two API reference libraries for development work:
+</p>
+<ul><li> <a href="http://apidocs.meego.com/1.1/core/html/index.html" class="external text" title="http://apidocs.meego.com/1.1/core/html/index.html" rel="nofollow">MeeGo API reference</a>
+ includes the official API set for MeeGo application development. For 
+MeeGo API, compatibility with future MeeGo releases is guaranteed.
+</li><li> <a href="http://apidocs.meego.com/1.1/platform/html/index.html" class="external text" title="http://apidocs.meego.com/1.1/platform/html/index.html" rel="nofollow">MeeGo Platform API reference</a>
+ extends the official MeeGo API by providing additional functionalities.
+ However, Platform API does not come with a compatibility guarantee with
+ future MeeGo releases. 
+</li></ul>
+<p><i>//Note that <b><a href="http://wiki.meego.com/SDK/Docs/1.1/Platform_API" title="SDK/Docs/1.1/Platform API"> updated content for  MeeGo Platform API reference main page</a></b> has not yet been moved to the HTML reference site.//</i>
+</p>
+<a name="UI_guidelines" id="UI_guidelines"></a><h2> <span class="mw-headline"> UI guidelines </span></h2>
+<p><a href="http://meego.com/developers/meego-ux-design-principles" class="external text" title="http://meego.com/developers/meego-ux-design-principles" rel="nofollow">UI design principles</a> <br>
+<a href="http://meego.com/developers/ui-design-guidelines" class="external text" title="http://meego.com/developers/ui-design-guidelines" rel="nofollow">UI design guidelines</a> <br>
+</p>
+<a name="Setting_up_your_development_environment" id="Setting_up_your_development_environment"></a><h2> <span class="mw-headline"> Setting up your development environment </span></h2>
+<a name="Linux" id="Linux"></a><h3> <span class="mw-headline"> Linux </span></h3>
+<p><a href="http://wiki.meego.com/SDK/Docs/1.1/Getting_started_with_the_MeeGo_SDK_for_Linux" title="SDK/Docs/1.1/Getting started with the MeeGo SDK for Linux">Installing and configuring MeeGo SDK for Linux</a><br>
+<a href="http://wiki.meego.com/SDK/Docs/1.1/MeeGo_SDK_Graphics_Acceleration" title="SDK/Docs/1.1/MeeGo SDK Graphics Acceleration">Checking your system's graphics capabilities</a><br>
+</p>
+<a name="Setting_up_your_device" id="Setting_up_your_device"></a><h3> <span class="mw-headline"> Setting up your device</span></h3>
+<p><a href="http://wiki.meego.com/SDK/Docs/1.1/Setting_up_N900_device" title="SDK/Docs/1.1/Setting up N900 device">Setting up your N900 device</a><br>
+<a href="http://wiki.meego.com/SDK/Docs/1.1/Setting_up_Netbook" title="SDK/Docs/1.1/Setting up Netbook">Setting up your Netbook</a><br>
+<a href="http://wiki.meego.com/SDK/Docs/1.1/Setting_up_Aava" title="SDK/Docs/1.1/Setting up Aava"> Setting up Aava</a>
+</p>
+<a name="Developing_native_applications" id="Developing_native_applications"></a><h2> <span class="mw-headline"> Developing native applications </span></h2>
+<p><a href="http://wiki.meego.com/SDK/Docs/1.1/Developing_for_MeeGo" title="SDK/Docs/1.1/Developing for MeeGo">Developing for MeeGo</a> <br>
+<a href="http://wiki.meego.com/SDK/Docs/1.1/Creating_Hello_World" title="SDK/Docs/1.1/Creating Hello World">Creating and running your first application</a><br>
+<a href="http://wiki.meego.com/SDK/Docs/1.1/Debugging_with_Qt_Creator" title="SDK/Docs/1.1/Debugging with Qt Creator">Debugging with Qt Creator</a><br>
+<a href="http://wiki.meego.com/SDK/Docs/1.1/MeeGo_SDK_with_Qt" title="SDK/Docs/1.1/MeeGo SDK with Qt"> Example Qt applications</a><br>
+</p>
+<a name="Developing_Web_Runtime_applications" id="Developing_Web_Runtime_applications"></a><h2> <span class="mw-headline">Developing Web Runtime applications</span></h2>
+<p><a href="http://wiki.meego.com/SDK/Docs/1.1/Web_SDK_with_WRT" title="SDK/Docs/1.1/Web SDK with WRT">Developing Web Runtime applications</a><br>
+</p>
+<a name="Alternative_development_approaches" id="Alternative_development_approaches"></a><h2> <span class="mw-headline"> Alternative development approaches </span></h2>
+<p><a href="http://wiki.meego.com/SDK/Docs/1.1/MeeGo_SDK_with_Xephyr" title="SDK/Docs/1.1/MeeGo SDK with Xephyr">Developing with Xephyr</a><br>
+<a href="http://wiki.meego.com/SDK/Docs/1.1/Building_a_MeeGo_chroot_on_Linux" title="SDK/Docs/1.1/Building a MeeGo chroot on Linux">Creating a MeeGo chroot</a> <br>
+<a href="http://wiki.meego.com/SDK/Docs/1.1/Configuring_QEMU_runtimes" title="SDK/Docs/1.1/Configuring QEMU runtimes">Setting up the emulator</a><br>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 12/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key meego_wiki:pcache:idhash:2177-0!1!0!!en!2!edit=0 and timestamp 20101108151915 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wiki.meego.com/SDK/Docs/1.1">http://wiki.meego.com/SDK/Docs/1.1</a>"</div>
+		<div class="mw_clear"></div>
+					</div><!-- mw_contentholder -->
+	</div><!-- mw_content -->
+	</div><!-- mw_contentwrapper -->
+
+	<div id="mw_portlets">
+
+	<!-- portlets -->
+			<div class="generated-sidebar portlet" id="p-Wiki_Navigation">
+		<h5>Wiki Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-Return-to-MeeGo.com"><a href="http://meego.com/">Return to MeeGo.com</a></li>
+				<li id="n-mainpage-description"><a href="http://wiki.meego.com/Main_Page">Main page</a></li>
+				<li id="n-recentchanges"><a href="http://wiki.meego.com/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://wiki.meego.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://wiki.meego.com/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- search -->
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform"><div>
+				<input name="title" value="Special:Search" type="hidden">
+
+				<input autocomplete="off" id="searchInput" name="search" title="Search MeeGo wiki [alt-shift-f]" accesskey="f" type="text">
+
+									<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" type="submit">&nbsp;
+								<input name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists" type="submit">
+			</div></form>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- toolbox -->
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://wiki.meego.com/Special:WhatLinksHere/SDK/Docs/1.1" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://wiki.meego.com/Special:RecentChangesLinked/SDK/Docs/1.1" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="http://wiki.meego.com/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://wiki.meego.com/index.php?title=SDK/Docs/1.1&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://wiki.meego.com/index.php?title=SDK/Docs/1.1&amp;oldid=19632" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- languages -->
+
+	</div><!-- mw_portlets -->
+
+
+	</div><!-- main -->
+
+	<div class="mw_clear"></div>
+
+	<!-- personal portlet -->
+	<div id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://meego.com/user?destination=wiki_home" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<!-- footer --> 
+	<div id="footer">
+  		<a href="http://linuxfoundation.org/"><div id="sponsor"><strong>Linux Foundation</strong></div></a>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified on 8 November 2010, at 14:55.</li>
+				<li id="viewcount">This page has been accessed 1,591 times.</li>
+			</ul>
+ 			<ul id="f-list">
+				<li id="copyright">Content is available under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" class="external " title="http://creativecommons.org/licenses/by/3.0/legalcode">Creative Commons Attribution 3.0 License</a>.</li>
+				<li id="privacy"><a href="http://wiki.meego.com/MeeGo_wiki:Privacy_policy" title="MeeGo wiki:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a href="http://wiki.meego.com/MeeGo_wiki:About" title="MeeGo wiki:About">About MeeGo wiki</a></li>
+			</ul>     
+		<div class="mw_poweredby">Powered by MediaWiki 1.15.5</div>	</div>
+
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.266 secs. --><div style="position: absolute; display: none; z-index: 9999;" id="livemargins_control"><img src="1.1_files/monitor-background-horizontal.png" style="position: absolute; left: -77px; top: -5px;" width="77" height="5">	<img src="1.1_files/monitor-background-vertical.png" style="position: absolute; left: 0pt; top: -5px;">	<img id="monitor-play-button" src="1.1_files/monitor-play-button.png" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5" style="position: absolute; left: 1px; top: 0pt; opacity: 0.5; cursor: pointer;"></div></body></html>
