@@ -81,6 +81,19 @@ Setting::Setting(QWidget *parent) :
     connect(commitButn, SIGNAL(released()), this, SLOT(onSubRelease()));
 }
 
+Setting::~Setting(){
+    delete vBoxLayout;
+    delete grid;
+    delete sensBox;
+    delete colorBox;
+    delete bottomButnLay;
+    delete commitButn;
+    delete exitButn;
+    delete preStepButn;
+    delete sensLabel;
+    delete colorLabel;
+}
+
 void Setting::onClick(){
     emit goPrevious();
 }

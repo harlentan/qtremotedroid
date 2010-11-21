@@ -18,6 +18,13 @@ OSCUdpClient::OSCUdpClient(QString &ipAddr, QString *portNum)
 
 }
 
+OSCUdpClient::~OSCUdpClient(){
+    delete qUdpSocket;
+    delete ip;
+
+
+}
+
 void OSCUdpClient::sendMouseMoveOscMsg(QMouseEvent *e)
 {
     type = 2;

@@ -18,6 +18,7 @@ class Setting : public QWidget
     Q_OBJECT
 public:
     Setting(QWidget *parent = 0);
+    ~Setting();
     int getColor();
     int getSens();
 

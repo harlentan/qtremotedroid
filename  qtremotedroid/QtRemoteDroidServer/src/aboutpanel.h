@@ -12,12 +12,13 @@ class AboutPanel : public MenuWidget
 {
 public:
     AboutPanel();
+    ~AboutPanel();
 
 private:
     QLabel *infoLabel;
-    QPixmap *iconPix;
-    QHBoxLayout *textLabelHLay;
-    QVBoxLayout *vLayout;
+    //QPixmap *iconPix;
+    //QHBoxLayout *textLabelHLay;
+    //QVBoxLayout *vLayout;
     QLabel *picLabel;
     QLabel *titleLabel;
     QGridLayout *gridLayout;

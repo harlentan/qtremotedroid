@@ -146,6 +146,15 @@ void MainWindow::retranslateUi(QMainWindow *MainWindow)
 
 MainWindow::~MainWindow()
 {
+    delete oscUdp;
+    delete horizontalLayout;
+    delete setButn;
+    delete touchPad;
+    delete verticalLayout;
+    delete centralWidget;
+    delete rightButn;
+    delete leftButn;
+    delete setPanel;
 
 }
 

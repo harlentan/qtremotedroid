@@ -3,6 +3,7 @@
 RemoteDroidServer::RemoteDroidServer(QWidget *parent) :
     QWidget(parent)
 {
+    bool isOk;
     server = new OscServer;
     udpSocket = new QUdpSocket;
     WOscContainerInfo rootInfo("root");
@@ -18,7 +19,11 @@ RemoteDroidServer::RemoteDroidServer(QWidget *parent) :
     qDebug() << server->GetAddressSpace()->GetAddressSpace().GetBuffer();
 
 
-    udpSocket->bind(QHostAddress::Any, 57110);
+    isOk = udpSocket->bind(QHostAddress::Any, 57110);
+    if(!isOk)
+        exit(0);
+
+
     connect(udpSocket, SIGNAL(readyRead()), this, SLOT(oscReceive()));
 
 
@@ -37,4 +42,9 @@ void RemoteDroidServer::oscReceive(){
     qDebug() << "the message is" << datagram;
     qDebug() << "the length is " << datagram.length();
     server->NetworkReceive(datagram.data(), datagram.length(), &net);
+}
+
+RemoteDroidServer::~RemoteDroidServer(){
+    delete udpSocket;
+    delete server;
 }

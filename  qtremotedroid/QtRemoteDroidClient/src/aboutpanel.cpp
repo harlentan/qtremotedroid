@@ -40,6 +40,14 @@ AboutPanel::AboutPanel(QWidget *parent) :
 
 }
 
+AboutPanel::~AboutPanel(){
+    delete vBox;
+    delete hBox;
+    delete okButton;
+    delete display;
+    delete iconLabel;
+}
+
 void AboutPanel::onOK(){
     emit goOK();
     this->hide();
