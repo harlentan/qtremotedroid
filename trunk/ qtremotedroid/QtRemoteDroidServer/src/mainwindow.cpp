@@ -27,6 +27,25 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    /*delete remoteServer;
+    delete trayIcon;
+    delete exitAction;
+    delete aboutAction;
+    delete configAction;
+    delete mainAction;
+    delete trayMenu;
+    delete about;
+    delete set;
+    delete mainWget;
+    */
+
+    delete mainAction;
+    delete aboutAction;
+    delete configAction;
+    delete exitAction;
+    delete trayIcon;
+    delete trayMenu;
+
 
 }
 
@@ -78,6 +97,8 @@ void MainWindow::setSystemTra(){
     aboutAction = new QAction("About QtRemoteDroid", this);
     mainAction = new QAction("Show main Window", this);
 
+
+
     //add icon to the menu
     icon = QIcon(QPixmap("./img/aboutusicon.png"));
     aboutAction->setIcon(icon);
@@ -122,3 +143,7 @@ void MainWindow::showMain(){
     mainWget = new MainWidget;
     mainWget->show();
 }
+
+
+
+

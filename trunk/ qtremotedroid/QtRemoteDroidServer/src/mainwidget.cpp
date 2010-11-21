@@ -41,3 +41,11 @@ void MainWidget::getLocalIP(){
 }
 
 
+void MainWidget::closeEvent(QCloseEvent *e){
+    e->ignore();
+    this->hide();
+}
+
+MainWidget::~MainWidget(){
+    delete textLabel;
+}

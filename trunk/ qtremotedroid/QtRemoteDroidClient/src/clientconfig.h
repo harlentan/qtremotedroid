@@ -20,6 +20,7 @@
 
 #include "mainwindow.h"
 #include "aboutpanel.h"
+#include "xmladapter.h"
 
 
 class ClientConfig : public QWidget
@@ -29,7 +30,7 @@ class ClientConfig : public QWidget
 public:
     ClientConfig(QWidget *parent = 0);
     ~ClientConfig();
-    void R
+
 
 
 
@@ -46,6 +47,7 @@ private:
     //NvClientConn *SA;
 public:
     MainWindow *tmpWin;// add by legend
+    XmlAdapter *xmlAdap;
 };
 
 #endif // CLIENTCONFIG_H

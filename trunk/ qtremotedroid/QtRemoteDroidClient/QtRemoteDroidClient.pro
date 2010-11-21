@@ -5,7 +5,9 @@
 #-------------------------------------------------
 
 QT       += core gui\
-        network
+        network\
+        xml
+
 
 TARGET = QtRemoteDroidClient
 TEMPLATE = app
@@ -41,7 +43,8 @@ SOURCES +=\
     src/OSC_lgd/WOscBundle.cpp \
     src/OSC_lgd/WOscBlob.cpp \
     src/setting.cpp \
-    src/aboutpanel.cpp
+    src/aboutpanel.cpp \
+    src/xmladapter.cpp
 
 HEADERS  += \
     src/widget.h \
@@ -73,7 +76,8 @@ HEADERS  += \
     src/OSC_lgd/WOscBlob.h \
     src/OSC_lgd/config.h \
     src/setting.h \
-    src/aboutpanel.h
+    src/aboutpanel.h \
+    src/xmladapter.h
 
 CONFIG += mobility
 MOBILITY = 

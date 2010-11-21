@@ -12,6 +12,7 @@
 #include <QHostAddress>
 #include <QGridLayout>
 #include <QDebug>
+#include <QCloseEvent>
 
 class MainWidget : public QWidget
 {
@@ -19,6 +20,7 @@ class MainWidget : public QWidget
 public:
     explicit MainWidget(QWidget *parent = 0);
     void paintEvent(QPaintEvent *);
+    ~MainWidget();
 
 public:
     void getLocalIP();
@@ -27,6 +29,10 @@ public:
 signals:
 
 public slots:
+
+
+protected:
+    void closeEvent(QCloseEvent *);
 
 private:
     QLabel *textLabel;

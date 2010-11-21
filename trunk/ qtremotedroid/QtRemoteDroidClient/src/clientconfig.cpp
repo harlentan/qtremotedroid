@@ -4,6 +4,7 @@
 ClientConfig::ClientConfig(QWidget *parent)
     : QWidget(parent)
 {
+    xmlAdap = new XmlAdapter;
     QLabel *pTipText = new QLabel(tr("Please input the server IP address"));
     //QPalette textPalet;
     //textPalet.setColor(QPalette::WindowText, Qt::white);
@@ -78,13 +79,16 @@ ClientConfig::ClientConfig(QWidget *parent)
     connect(abPanel, SIGNAL(goOK()), this, SLOT(thisShow()));
 
     //Create the QtRemoteDroid dir
-    QDir dir;
+    /*QDir dir;
     if(!dir.exists(QtRdDir))
-    dir.mkdir(QtRdDir);
+    dir.mkdir(QtRdDir);*/
 }
 
 ClientConfig::~ClientConfig()
 {
+    delete tmpWin;
+    delete pIpEdit;
+    delete abPanel;
 
 }
 

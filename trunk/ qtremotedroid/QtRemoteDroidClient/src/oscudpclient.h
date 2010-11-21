@@ -34,6 +34,7 @@ class OSCUdpClient : public QObject
 public:
     //explicit OSCUdpClient(QObject *parent = 0);
     OSCUdpClient(QString &ipAddr, QString *portNum);
+    ~OSCUdpClient();
 
 public:
     void packOscMsg(QString *methodName);

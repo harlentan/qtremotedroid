@@ -15,6 +15,7 @@ class RemoteDroidServer : public QWidget
     Q_OBJECT
 public:
     explicit RemoteDroidServer(QWidget *parent = 0);
+    ~RemoteDroidServer();
 
 signals:
 

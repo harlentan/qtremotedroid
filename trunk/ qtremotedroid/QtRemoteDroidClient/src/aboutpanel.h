@@ -15,6 +15,7 @@ class AboutPanel : public QWidget
     Q_OBJECT
 public:
     explicit AboutPanel(QWidget *parent = 0);
+    ~AboutPanel();
 
 signals:
     void goOK();

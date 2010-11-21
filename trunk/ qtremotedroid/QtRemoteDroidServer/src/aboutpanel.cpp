@@ -90,7 +90,23 @@ AboutPanel::AboutPanel()
     setWindowIcon(*ico);
 
 
+}
 
+AboutPanel::~AboutPanel(){
+    /*delete infoLabel;
+    delete iconPix;
+    delete textLabelHLay;
+    delete vLayout;
+    delete picLabel;
+    delete titleLabel;
+    delete gridLayout;
+    delete ico;*/
+
+    delete gridLayout;
+    delete infoLabel;
+    delete titleLabel;
+    delete picLabel;
+    delete ico;
 
 
 }
