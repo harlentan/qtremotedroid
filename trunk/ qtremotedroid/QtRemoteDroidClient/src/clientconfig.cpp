@@ -5,6 +5,7 @@ ClientConfig::ClientConfig(QWidget *parent)
     : QWidget(parent)
 {
     xmlAdap = new XmlAdapter;
+
     QLabel *pTipText = new QLabel(tr("Please input the server IP address"));
     //QPalette textPalet;
     //textPalet.setColor(QPalette::WindowText, Qt::white);
@@ -20,6 +21,8 @@ ClientConfig::ClientConfig(QWidget *parent)
     //set the ip format
     QString maskStr("000.000.000.000");
     pIpEdit->setInputMask(maskStr);
+
+    //pIpEdit->setText(xmlAdap->readXml());
 
     QPushButton *pConnButn = new QPushButton(tr("Connect"));
     QPushButton *pQuitButn = new QPushButton(tr("Quit"));
@@ -97,7 +100,9 @@ void ClientConfig::ClientConn()
     this->hide();
 
 
+
     QString ipText = pIpEdit->text();
+    xmlAdap->writeXml(&ipText);
     QString portNum(SERV_PORT);
  /*
 

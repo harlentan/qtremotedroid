@@ -18,15 +18,19 @@ class XmlAdapter
 public:
     XmlAdapter();
     ~XmlAdapter();
-    QString *readXml();
+    QString readXml();
     void writeXml(QString *);
+
 
 private:
     QFile *xmlFile;
     QDir *xmlDir;
     QDomDocument *doc;
-    //QDomElement *root;
-    //QDomElement *ip;
+    QDomElement rootNode;
+    QString rootName;
+    QDomElement ipNode;
+    QString ipText;
+    QTextStream out;
 };
 
 #endif // XMLADAPTER_H
