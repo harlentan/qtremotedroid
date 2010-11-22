@@ -1,5 +1,7 @@
 #include "xmladapter.h"
 
+#include <QDebug>
+
 XmlAdapter::XmlAdapter()
 {
     xmlDir = new QDir(QtRdDir);
@@ -12,9 +14,12 @@ XmlAdapter::XmlAdapter()
     xmlPath.append("\\");
     xmlPath.append(ConfigName);
     xmlFile = new QFile(xmlPath);
-    QTextStream out;
+    //xmlFile->open(QIODevice::ReadWrite);
     QDomProcessingInstruction instruction;
     doc = new QDomDocument;
+
+    xmlFile->open(QIODevice::ReadWrite);
+    out.setDevice(xmlFile);
     //init the xml file
 
     if(!xmlFile->exists()){
@@ -29,17 +34,34 @@ XmlAdapter::XmlAdapter()
         //ip.setNodeValue("");
 
 
-        xmlFile->open(QIODevice::ReadWrite);
+        //xmlFile->open(QIODevice::ReadWrite);
         out.setDevice(xmlFile);
         doc->save(out, 4);
-        xmlFile->close();
+
     }
+    doc->setContent(xmlFile);
+    rootNode = doc->documentElement();
+    rootName = QString(rootNode.tagName());
+
+
+    //xmlFile->close();
+    //readXml();
 }
 
 XmlAdapter::~XmlAdapter(){
 
 }
 
-void XmlAdapter::writeXml(QString *){
+void XmlAdapter::writeXml(QString *st){
+    /*ipNode.setNodeValue(*st);
+    qDebug() << "write"<<st;
 
+    doc->save(out, 4);
+*/}
+
+QString XmlAdapter::readXml(){
+    /*ipNode = rootNode.firstChildElement("ip");
+    qDebug()<< ipNode.text();
+    return ipNode.text();*/
 }
+
