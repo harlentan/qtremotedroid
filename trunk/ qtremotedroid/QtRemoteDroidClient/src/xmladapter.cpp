@@ -14,7 +14,7 @@ XmlAdapter::XmlAdapter()
     xmlPath.append("\\");
     xmlPath.append(ConfigName);
     xmlFile = new QFile(xmlPath);
-    //xmlFile->open(QIODevice::ReadWrite);
+
     QDomProcessingInstruction instruction;
     doc = new QDomDocument;
 
@@ -39,9 +39,9 @@ XmlAdapter::XmlAdapter()
         doc->save(out, 4);
 
     }
-    doc->setContent(xmlFile);
-    rootNode = doc->documentElement();
-    rootName = QString(rootNode.tagName());
+    //doc->setContent(xmlFile);
+    //rootNode = doc->documentElement();
+    //rootName = QString(rootNode.tagName());
 
 
     //xmlFile->close();
