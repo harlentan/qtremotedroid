@@ -28,8 +28,12 @@ void LeftButtonMethod::Method(
     {
     case 0:
         mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+        qDebug() << "The leftbutton pressed";
+        break;
     case 1:
         mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+        qDebug() << "The leftbutton released";
+        break;
     }
 
 }
