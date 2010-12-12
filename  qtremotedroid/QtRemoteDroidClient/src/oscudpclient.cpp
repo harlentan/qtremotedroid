@@ -1,6 +1,7 @@
 #include "oscudpclient.h"
 #include <QtNetwork/QHostAddress>
 
+
 OSCUdpClient::OSCUdpClient(QString &ipAddr, QString *portNum)
 {
     //ip = new QString(ipAddr.data(),ipAddr.size());

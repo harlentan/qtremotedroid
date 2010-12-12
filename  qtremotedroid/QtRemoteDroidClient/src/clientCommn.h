@@ -39,5 +39,12 @@ Just add your common define here
 #define QtRdDir "C:\\QtRemoteDroid"
 #define ConfigName "QtRd.xml"
 
+enum MouseGesture{
+    Mouse_move,
+    Mouse_leftclick,
+    Mouse_rightclick,
+    Mouse_scroll,
+    Mouse_drag
+};
 
 #endif // CLIENTCOMMN_H
